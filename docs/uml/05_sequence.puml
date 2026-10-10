@@ -1,0 +1,24 @@
+@startuml
+skinparam monochrome true
+skinparam defaultFontName Microsoft YaHei
+participant WorkflowEngine as W
+participant "Actor / Reviewer" as A
+participant MCPGateway as G
+participant "MCP Server" as S
+participant DocumentStore as D
+G -> S : initialize(protocolVersion="2025-06-18")
+S --> G : version, capabilities, serverInfo
+G -> S : notifications/initialized
+G -> S : tools/list
+S --> G : tools + inputSchema
+W -> A : actor(...) / reviewer(...)
+A -> G : call(name, arguments)
+G -> S : tools/call
+S -> D : call(name, arguments)
+D --> S : evidence + optional image data
+S --> G : TextContent + ImageContent
+G --> A : dict(evidence, images)
+A --> W : Answer / Review completion event
+note over W : EventBus dispatches completion;
+state/evidence guards control next step
+@enduml

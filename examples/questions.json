@@ -1,0 +1,416 @@
+[
+  {
+    "id": "harbor-01",
+    "doc_id": "harbor",
+    "question": "港湾系统的试点规模为多少名读者？",
+    "expected_answer": "2000名读者",
+    "answerable": true,
+    "category": "text",
+    "required_terms": [
+      "2000"
+    ],
+    "expected_evidence_ids": [
+      "harbor:text:s1"
+    ]
+  },
+  {
+    "id": "harbor-02",
+    "doc_id": "harbor",
+    "question": "港湾系统每日服务时间是什么？",
+    "expected_answer": "每日08:00至22:00",
+    "answerable": true,
+    "category": "text",
+    "required_terms": [
+      "08:00",
+      "22:00"
+    ],
+    "expected_evidence_ids": [
+      "harbor:text:s1"
+    ]
+  },
+  {
+    "id": "harbor-03",
+    "doc_id": "harbor",
+    "question": "港湾系统最多允许同时借阅多少份资料？",
+    "expected_answer": "3份资料",
+    "answerable": true,
+    "category": "text",
+    "required_terms": [
+      "3"
+    ],
+    "expected_evidence_ids": [
+      "harbor:text:s2"
+    ]
+  },
+  {
+    "id": "harbor-04",
+    "doc_id": "harbor",
+    "question": "港湾系统的借阅审计日志保留多久？",
+    "expected_answer": "180天",
+    "answerable": true,
+    "category": "text",
+    "required_terms": [
+      "180"
+    ],
+    "expected_evidence_ids": [
+      "harbor:text:s3"
+    ]
+  },
+  {
+    "id": "harbor-05",
+    "doc_id": "harbor",
+    "question": "港湾系统的查询响应时间上限是多少？",
+    "expected_answer": "1.5秒",
+    "answerable": true,
+    "category": "table",
+    "required_terms": [
+      "1.5"
+    ],
+    "expected_evidence_ids": [
+      "harbor:table:t1"
+    ]
+  },
+  {
+    "id": "harbor-06",
+    "doc_id": "harbor",
+    "question": "港湾系统的设备总预算是多少？",
+    "expected_answer": "16000元",
+    "answerable": true,
+    "category": "table",
+    "required_terms": [
+      "16000"
+    ],
+    "expected_evidence_ids": [
+      "harbor:table:t2"
+    ]
+  },
+  {
+    "id": "harbor-07",
+    "doc_id": "harbor",
+    "question": "港湾系统首次借阅期限和试点建设周期分别是多少？",
+    "expected_answer": "首次借阅期限14天，试点建设周期4周",
+    "answerable": true,
+    "category": "cross_section",
+    "required_terms": [
+      "14",
+      "4"
+    ],
+    "expected_evidence_ids": [
+      "harbor:text:s2",
+      "harbor:text:s4"
+    ]
+  },
+  {
+    "id": "harbor-08",
+    "doc_id": "harbor",
+    "question": "港湾系统每天何时开始备份，谁负责开馆前检查备份状态？",
+    "expected_answer": "每日02:00开始备份，由管理员检查",
+    "answerable": true,
+    "category": "cross_section",
+    "required_terms": [
+      "02:00",
+      "管理员"
+    ],
+    "expected_evidence_ids": [
+      "harbor:table:t1",
+      "harbor:text:s4"
+    ]
+  },
+  {
+    "id": "harbor-09",
+    "doc_id": "harbor",
+    "question": "港湾系统采用哪一家云服务商？",
+    "expected_answer": "文档未说明云服务商",
+    "answerable": false,
+    "category": "unanswerable",
+    "required_terms": [],
+    "expected_evidence_ids": []
+  },
+  {
+    "id": "harbor-10",
+    "doc_id": "harbor",
+    "question": "港湾系统项目负责人的手机号码是多少？",
+    "expected_answer": "文档未提供项目负责人手机号码",
+    "answerable": false,
+    "category": "unanswerable",
+    "required_terms": [],
+    "expected_evidence_ids": []
+  },
+  {
+    "id": "orchard-01",
+    "doc_id": "orchard",
+    "question": "果园系统试点覆盖多少个仓库？",
+    "expected_answer": "2个仓库",
+    "answerable": true,
+    "category": "text",
+    "required_terms": [
+      "2"
+    ],
+    "expected_evidence_ids": [
+      "orchard:text:s1"
+    ]
+  },
+  {
+    "id": "orchard-02",
+    "doc_id": "orchard",
+    "question": "果园系统是否处理销售订单和财务结算？",
+    "expected_answer": "不处理销售订单和财务结算",
+    "answerable": true,
+    "category": "text",
+    "required_terms": [
+      "不",
+      "销售",
+      "财务"
+    ],
+    "expected_evidence_ids": [
+      "orchard:text:s1"
+    ]
+  },
+  {
+    "id": "orchard-03",
+    "doc_id": "orchard",
+    "question": "果园系统单次领用超过多少件时需要主管复核？",
+    "expected_answer": "超过100件",
+    "answerable": true,
+    "category": "text",
+    "required_terms": [
+      "100"
+    ],
+    "expected_evidence_ids": [
+      "orchard:text:s2"
+    ]
+  },
+  {
+    "id": "orchard-04",
+    "doc_id": "orchard",
+    "question": "果园系统的操作日志保留多久？",
+    "expected_answer": "365天",
+    "answerable": true,
+    "category": "text",
+    "required_terms": [
+      "365"
+    ],
+    "expected_evidence_ids": [
+      "orchard:text:s3"
+    ]
+  },
+  {
+    "id": "orchard-05",
+    "doc_id": "orchard",
+    "question": "果园系统入库保存响应时间上限是多少？",
+    "expected_answer": "2秒",
+    "answerable": true,
+    "category": "table",
+    "required_terms": [
+      "2"
+    ],
+    "expected_evidence_ids": [
+      "orchard:table:t1"
+    ]
+  },
+  {
+    "id": "orchard-06",
+    "doc_id": "orchard",
+    "question": "果园系统标签纸的安全库存是多少？",
+    "expected_answer": "80件",
+    "answerable": true,
+    "category": "table",
+    "required_terms": [
+      "80"
+    ],
+    "expected_evidence_ids": [
+      "orchard:table:t2"
+    ]
+  },
+  {
+    "id": "orchard-07",
+    "doc_id": "orchard",
+    "question": "果园系统库存提醒多久汇总一次，故障恢复时间目标是多少？",
+    "expected_answer": "每6小时汇总一次，故障恢复时间目标30分钟",
+    "answerable": true,
+    "category": "cross_section",
+    "required_terms": [
+      "6",
+      "30"
+    ],
+    "expected_evidence_ids": [
+      "orchard:text:s2",
+      "orchard:text:s4"
+    ]
+  },
+  {
+    "id": "orchard-08",
+    "doc_id": "orchard",
+    "question": "果园系统需要主管复核的数量条件是什么，主管能否复核自己的申请？",
+    "expected_answer": "单次领用超过100件需要主管复核，主管不得复核自己的申请",
+    "answerable": true,
+    "category": "cross_section",
+    "required_terms": [
+      "100",
+      "不得",
+      "自己"
+    ],
+    "expected_evidence_ids": [
+      "orchard:text:s2",
+      "orchard:text:s3"
+    ]
+  },
+  {
+    "id": "orchard-09",
+    "doc_id": "orchard",
+    "question": "果园系统使用的数据库品牌是什么？",
+    "expected_answer": "文档未说明数据库品牌",
+    "answerable": false,
+    "category": "unanswerable",
+    "required_terms": [],
+    "expected_evidence_ids": []
+  },
+  {
+    "id": "orchard-10",
+    "doc_id": "orchard",
+    "question": "果园系统的实际上线日期是哪一天？",
+    "expected_answer": "文档未提供实际上线日期",
+    "answerable": false,
+    "category": "unanswerable",
+    "required_terms": [],
+    "expected_evidence_ids": []
+  },
+  {
+    "id": "atlas-01",
+    "doc_id": "atlas",
+    "question": "星图系统的试点服务多少名志愿者？",
+    "expected_answer": "300名志愿者",
+    "answerable": true,
+    "category": "text",
+    "required_terms": [
+      "300"
+    ],
+    "expected_evidence_ids": [
+      "atlas:text:s1"
+    ]
+  },
+  {
+    "id": "atlas-02",
+    "doc_id": "atlas",
+    "question": "星图系统每名志愿者每周最多参加几个班次？",
+    "expected_answer": "3个班次",
+    "answerable": true,
+    "category": "text",
+    "required_terms": [
+      "3"
+    ],
+    "expected_evidence_ids": [
+      "atlas:text:s2"
+    ]
+  },
+  {
+    "id": "atlas-03",
+    "doc_id": "atlas",
+    "question": "星图系统报名在活动开始前多久截止？",
+    "expected_answer": "24小时",
+    "answerable": true,
+    "category": "text",
+    "required_terms": [
+      "24"
+    ],
+    "expected_evidence_ids": [
+      "atlas:text:s2"
+    ]
+  },
+  {
+    "id": "atlas-04",
+    "doc_id": "atlas",
+    "question": "星图系统的公开排班表显示什么，是否显示联系电话？",
+    "expected_answer": "仅显示志愿者编号，不显示联系电话",
+    "answerable": true,
+    "category": "text",
+    "required_terms": [
+      "编号",
+      "不",
+      "电话"
+    ],
+    "expected_evidence_ids": [
+      "atlas:text:s3"
+    ]
+  },
+  {
+    "id": "atlas-05",
+    "doc_id": "atlas",
+    "question": "星图系统每场活动报名人数上限是多少？",
+    "expected_answer": "60人",
+    "answerable": true,
+    "category": "table",
+    "required_terms": [
+      "60"
+    ],
+    "expected_evidence_ids": [
+      "atlas:table:t1"
+    ]
+  },
+  {
+    "id": "atlas-06",
+    "doc_id": "atlas",
+    "question": "星图系统示例活动的岗位需求合计多少人？",
+    "expected_answer": "15人",
+    "answerable": true,
+    "category": "table",
+    "required_terms": [
+      "15"
+    ],
+    "expected_evidence_ids": [
+      "atlas:table:t2"
+    ]
+  },
+  {
+    "id": "atlas-07",
+    "doc_id": "atlas",
+    "question": "星图系统单个班次时长是多少，排班确认后多久发送通知？",
+    "expected_answer": "班次时长2小时，确认后10分钟内发送站内通知",
+    "answerable": true,
+    "category": "cross_section",
+    "required_terms": [
+      "2",
+      "10"
+    ],
+    "expected_evidence_ids": [
+      "atlas:text:s2",
+      "atlas:text:s4"
+    ]
+  },
+  {
+    "id": "atlas-08",
+    "doc_id": "atlas",
+    "question": "星图系统排班修改记录保留多久，项目建设周期为几周？",
+    "expected_answer": "修改记录保留90天，建设周期5周",
+    "answerable": true,
+    "category": "cross_section",
+    "required_terms": [
+      "90",
+      "5"
+    ],
+    "expected_evidence_ids": [
+      "atlas:text:s3",
+      "atlas:text:s4"
+    ]
+  },
+  {
+    "id": "atlas-09",
+    "doc_id": "atlas",
+    "question": "星图系统短信供应商叫什么？",
+    "expected_answer": "文档未说明短信供应商",
+    "answerable": false,
+    "category": "unanswerable",
+    "required_terms": [],
+    "expected_evidence_ids": []
+  },
+  {
+    "id": "atlas-10",
+    "doc_id": "atlas",
+    "question": "星图系统的年度运维费用是多少？",
+    "expected_answer": "文档未提供年度运维费用",
+    "answerable": false,
+    "category": "unanswerable",
+    "required_terms": [],
+    "expected_evidence_ids": []
+  }
+]

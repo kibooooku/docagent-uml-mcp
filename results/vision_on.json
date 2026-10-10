@@ -1,0 +1,866 @@
+{
+  "benchmark": "3-question image-only integration fixture; not an accuracy benchmark",
+  "model": "deepseek-flash",
+  "vision": true,
+  "protocol": "2025-06-18",
+  "mcp_sdk": "1.12.4",
+  "config_fingerprint": "46bf1e7dddbc0314e461d052aecf1f8bfc4747b2949ea94fcb1e912ad1df15f3",
+  "memory_policy": "empty and frozen separately for each question",
+  "concurrency": 1,
+  "limitations": [
+    "Rule scoring is not semantic entailment evaluation.",
+    "Single trial per question; small synthetic sample.",
+    "Latency includes provider variation and concurrent load.",
+    "Baseline is an independent educational reconstruction, not the authors' exact implementation."
+  ],
+  "summary": {
+    "optimized": {
+      "n": 3,
+      "rule_correct": 3,
+      "rule_accuracy": 1.0,
+      "accuracy_wilson_95": [
+        0.4385,
+        1.0
+      ],
+      "completion_rate": 1.0,
+      "mean_evidence_recall": 1.0,
+      "mean_elapsed_seconds": 6.014107,
+      "median_elapsed_seconds": 5.971685,
+      "p95_elapsed_seconds": 6.347875,
+      "mean_tool_calls": 2.3333333333333335,
+      "model_requests": 15,
+      "prompt_tokens": 27103,
+      "completion_tokens": 1699,
+      "categories": {
+        "cross_image_arithmetic": {
+          "n": 1,
+          "correct": 1
+        },
+        "image_arithmetic": {
+          "n": 1,
+          "correct": 1
+        },
+        "image_reading": {
+          "n": 1,
+          "correct": 1
+        }
+      }
+    }
+  },
+  "records": [
+    {
+      "id": "vision-01",
+      "mode": "optimized",
+      "category": "image_reading",
+      "question": "根据图中的 Completed tasks，East 区域的完成数量是多少？",
+      "doc_id": "vision_lab",
+      "expected_answer": "East完成数量为27",
+      "timestamp_utc": "2026-10-10T06:24:25.650995+00:00",
+      "config_fingerprint": "46bf1e7dddbc0314e461d052aecf1f8bfc4747b2949ea94fcb1e912ad1df15f3",
+      "requested_model": "deepseek-flash",
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "usage": {
+        "requests": 5,
+        "prompt_tokens": 8265,
+        "completion_tokens": 457,
+        "api_retries": 0
+      },
+      "agent_tool_trace": [
+        {
+          "role": "actor",
+          "turn": 0,
+          "tool": "get_outline"
+        },
+        {
+          "role": "actor",
+          "turn": 1,
+          "tool": "get_image"
+        },
+        {
+          "role": "reviewer",
+          "turn": 0,
+          "tool": "get_outline"
+        },
+        {
+          "role": "reviewer",
+          "turn": 0,
+          "tool": "get_image"
+        }
+      ],
+      "result": {
+        "task_id": "optimized-vision-01",
+        "mode": "optimized",
+        "state": "completed",
+        "answer": {
+          "answer": "East 区域的完成数量为 27（图中 East 柱上方标注的数值）。",
+          "status": "answered",
+          "evidence": [
+            {
+              "id": "vision_lab:image:fig1",
+              "doc_id": "vision_lab",
+              "page": 1,
+              "section_id": "fig1",
+              "text": "Completed tasks by region: North, East, West. This chart contains synthetic completion counts; read the image for the values.",
+              "source_type": "image"
+            }
+          ]
+        },
+        "review": {
+          "verdict": "accept",
+          "answer": {
+            "answer": "East 区域的完成数量为 27（图中 East 柱上方标注的数值）。",
+            "status": "answered",
+            "evidence": [
+              {
+                "id": "vision_lab:image:fig1",
+                "doc_id": "vision_lab",
+                "page": 1,
+                "section_id": "fig1",
+                "text": "Completed tasks by region: North, East, West. This chart contains synthetic completion counts; read the image for the values.",
+                "source_type": "image"
+              }
+            ]
+          },
+          "reason": "The rendered fig1 chart shows the East bar labeled 27 (North 18, West 12), matching the draft's value and citation. No source error found.",
+          "memory_candidate": null
+        },
+        "events": [
+          {
+            "event_id": "50e0580c74f340a4aacd0c4b8448496d",
+            "task_id": "optimized-vision-01",
+            "type": "task_submitted",
+            "state": "pending",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:19.928456+00:00"
+          },
+          {
+            "event_id": "5052f3f67d7b45b28f0a4e6f4c4f2851",
+            "task_id": "optimized-vision-01",
+            "type": "state_changed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:19.928456+00:00"
+          },
+          {
+            "event_id": "96c893bdd5b945e882e88804f189ddf8",
+            "task_id": "optimized-vision-01",
+            "type": "tool_started",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:20.779664+00:00",
+            "tool": "get_outline",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "5c414a63e6f440f0b22c2c51b93726ac",
+            "task_id": "optimized-vision-01",
+            "type": "tool_completed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:20.789824+00:00",
+            "tool": "get_outline",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "e50ddc700cef42bda710c0aef85c0a8a",
+            "task_id": "optimized-vision-01",
+            "type": "tool_started",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:21.870846+00:00",
+            "tool": "get_image",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "6ad60a154c22422a800a4a98c8b5c259",
+            "task_id": "optimized-vision-01",
+            "type": "tool_completed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:21.883227+00:00",
+            "tool": "get_image",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "22f4b25a2fae4effb300616db39bd290",
+            "task_id": "optimized-vision-01",
+            "type": "actor_completed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:22.757750+00:00"
+          },
+          {
+            "event_id": "b92705fd2a754aa9bb2cc92fdc12125f",
+            "task_id": "optimized-vision-01",
+            "type": "state_changed",
+            "state": "reviewing",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:22.757750+00:00"
+          },
+          {
+            "event_id": "3ba30e1e0c9244daa69fbe9ceaec8810",
+            "task_id": "optimized-vision-01",
+            "type": "tool_cache_hit",
+            "state": "reviewing",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:24.082725+00:00",
+            "tool": "get_outline"
+          },
+          {
+            "event_id": "9f6b31a31a524fe88dd2b1eee64b3659",
+            "task_id": "optimized-vision-01",
+            "type": "tool_cache_hit",
+            "state": "reviewing",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:24.082725+00:00",
+            "tool": "get_image"
+          },
+          {
+            "event_id": "abb13e1fd3f242db82aaa13af27e14a3",
+            "task_id": "optimized-vision-01",
+            "type": "review_completed",
+            "state": "reviewing",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:25.650431+00:00"
+          },
+          {
+            "event_id": "d15dd21bfa1c4d8ab2c7c40c9a6d2fb9",
+            "task_id": "optimized-vision-01",
+            "type": "state_changed",
+            "state": "validating",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:25.650431+00:00"
+          },
+          {
+            "event_id": "5e5ab1b7177249aa8c70f9be6d080a1e",
+            "task_id": "optimized-vision-01",
+            "type": "tool_cache_hit",
+            "state": "validating",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:25.650431+00:00",
+            "tool": "get_image"
+          },
+          {
+            "event_id": "4bbcf3fd7d344749b08b281959c77b3f",
+            "task_id": "optimized-vision-01",
+            "type": "validation_completed",
+            "state": "validating",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:25.650431+00:00"
+          },
+          {
+            "event_id": "a14bfae939bd4223b8a1ed767b59c1e5",
+            "task_id": "optimized-vision-01",
+            "type": "state_changed",
+            "state": "completed",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:25.650995+00:00"
+          },
+          {
+            "event_id": "9ee6e3c9741a4e3289cc89a37fcda1af",
+            "task_id": "optimized-vision-01",
+            "type": "task_completed",
+            "state": "completed",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:25.650995+00:00"
+          }
+        ],
+        "metrics": {
+          "tool_calls": 2,
+          "tool_requests": 5,
+          "retries": 0,
+          "cache_hits": 3,
+          "tool_failures": 0,
+          "tool_timeouts": 0,
+          "actor_calls": 1,
+          "reviewer_calls": 1,
+          "evidence_checks": 1,
+          "evidence_rejections": 0,
+          "memory_writes": 0,
+          "stale_memories_skipped": 0,
+          "revisions": 0,
+          "duplicate_events": 0,
+          "elapsed_seconds": 5.722761
+        },
+        "diagnostics": [],
+        "error": null,
+        "evidence_gate_scope": "reference identity and exact excerpt membership; not semantic entailment"
+      },
+      "scores": {
+        "rule_correct": true,
+        "completed": true,
+        "expected_evidence_recall": 1.0,
+        "all_expected_evidence": true,
+        "unanswerable_false_answer": false,
+        "citation_count": 1,
+        "scoring_method": "public_required_terms_and_status_v1"
+      }
+    },
+    {
+      "id": "vision-02",
+      "mode": "optimized",
+      "category": "image_arithmetic",
+      "question": "根据 Completed tasks 图，East 区域的完成数量减去 West 区域的完成数量，差值是多少？",
+      "doc_id": "vision_lab",
+      "expected_answer": "27减12等于15",
+      "timestamp_utc": "2026-10-10T06:24:33.461287+00:00",
+      "config_fingerprint": "46bf1e7dddbc0314e461d052aecf1f8bfc4747b2949ea94fcb1e912ad1df15f3",
+      "requested_model": "deepseek-flash",
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "usage": {
+        "requests": 5,
+        "prompt_tokens": 8346,
+        "completion_tokens": 494,
+        "api_retries": 0
+      },
+      "agent_tool_trace": [
+        {
+          "role": "actor",
+          "turn": 0,
+          "tool": "get_outline"
+        },
+        {
+          "role": "actor",
+          "turn": 1,
+          "tool": "get_image"
+        },
+        {
+          "role": "reviewer",
+          "turn": 0,
+          "tool": "get_outline"
+        },
+        {
+          "role": "reviewer",
+          "turn": 0,
+          "tool": "get_image"
+        }
+      ],
+      "result": {
+        "task_id": "optimized-vision-02",
+        "mode": "optimized",
+        "state": "completed",
+        "answer": {
+          "answer": "East 区域完成数量为 27，West 区域完成数量为 12，差值 = 27 − 12 = 15。",
+          "status": "answered",
+          "evidence": [
+            {
+              "id": "vision_lab:image:fig1",
+              "doc_id": "vision_lab",
+              "page": 1,
+              "section_id": "fig1",
+              "text": "Completed tasks by region: North, East, West. This chart contains synthetic completion counts; read the image for the values.",
+              "source_type": "image"
+            }
+          ]
+        },
+        "review": {
+          "verdict": "accept",
+          "answer": {
+            "answer": "East 区域完成数量为 27，West 区域完成数量为 12，差值 = 27 − 12 = 15。",
+            "status": "answered",
+            "evidence": [
+              {
+                "id": "vision_lab:image:fig1",
+                "doc_id": "vision_lab",
+                "page": 1,
+                "section_id": "fig1",
+                "text": "Completed tasks by region: North, East, West. This chart contains synthetic completion counts; read the image for the values.",
+                "source_type": "image"
+              }
+            ]
+          },
+          "reason": "The fig1 chart shows East = 27 and West = 12, so 27 − 12 = 15. The draft's values, subtraction and citation match the source image.",
+          "memory_candidate": null
+        },
+        "events": [
+          {
+            "event_id": "dd05b5b2a74f43e1b622e9af918f1221",
+            "task_id": "optimized-vision-02",
+            "type": "task_submitted",
+            "state": "pending",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:27.489282+00:00"
+          },
+          {
+            "event_id": "7e05cdeaeb2a472992df59a6b530c2f2",
+            "task_id": "optimized-vision-02",
+            "type": "state_changed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:27.489282+00:00"
+          },
+          {
+            "event_id": "6ad8ce57e7eb4bfb83d0751d57cb62f9",
+            "task_id": "optimized-vision-02",
+            "type": "tool_started",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:28.652503+00:00",
+            "tool": "get_outline",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "40289e938c7e46bbb24575271994ffa6",
+            "task_id": "optimized-vision-02",
+            "type": "tool_completed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:28.662321+00:00",
+            "tool": "get_outline",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "7b3a4abad3c746dfb8b673ea2d14391c",
+            "task_id": "optimized-vision-02",
+            "type": "tool_started",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:29.382464+00:00",
+            "tool": "get_image",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "e051c8df4392406688baf52f8679be73",
+            "task_id": "optimized-vision-02",
+            "type": "tool_completed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:29.394386+00:00",
+            "tool": "get_image",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "b94683a1d22f469b8f2c4fe9e6a008ee",
+            "task_id": "optimized-vision-02",
+            "type": "actor_completed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:30.687807+00:00"
+          },
+          {
+            "event_id": "43fd40d15ba84b74abe81473b5d26741",
+            "task_id": "optimized-vision-02",
+            "type": "state_changed",
+            "state": "reviewing",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:30.687807+00:00"
+          },
+          {
+            "event_id": "25f5328aed7c43a087862d12530c1028",
+            "task_id": "optimized-vision-02",
+            "type": "tool_cache_hit",
+            "state": "reviewing",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:31.592536+00:00",
+            "tool": "get_outline"
+          },
+          {
+            "event_id": "869f83284522485983fc707deb1ec9ad",
+            "task_id": "optimized-vision-02",
+            "type": "tool_cache_hit",
+            "state": "reviewing",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:31.593084+00:00",
+            "tool": "get_image"
+          },
+          {
+            "event_id": "bddb5b8d5925491cb893edd873dd1930",
+            "task_id": "optimized-vision-02",
+            "type": "review_completed",
+            "state": "reviewing",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:33.460749+00:00"
+          },
+          {
+            "event_id": "77d3a3a08524485397427bb9ec224ad3",
+            "task_id": "optimized-vision-02",
+            "type": "state_changed",
+            "state": "validating",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:33.460749+00:00"
+          },
+          {
+            "event_id": "237cc244f0914f37a8fdc8bf4848065f",
+            "task_id": "optimized-vision-02",
+            "type": "tool_cache_hit",
+            "state": "validating",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:33.460749+00:00",
+            "tool": "get_image"
+          },
+          {
+            "event_id": "d943281193444d9b86b2a6fbf84478ac",
+            "task_id": "optimized-vision-02",
+            "type": "validation_completed",
+            "state": "validating",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:33.460749+00:00"
+          },
+          {
+            "event_id": "46ca601be8154fabbbd049cd41625ff0",
+            "task_id": "optimized-vision-02",
+            "type": "state_changed",
+            "state": "completed",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:33.460749+00:00"
+          },
+          {
+            "event_id": "9f3d374158e54df4a848f19ce3c959dd",
+            "task_id": "optimized-vision-02",
+            "type": "task_completed",
+            "state": "completed",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:33.460749+00:00"
+          }
+        ],
+        "metrics": {
+          "tool_calls": 2,
+          "tool_requests": 5,
+          "retries": 0,
+          "cache_hits": 3,
+          "tool_failures": 0,
+          "tool_timeouts": 0,
+          "actor_calls": 1,
+          "reviewer_calls": 1,
+          "evidence_checks": 1,
+          "evidence_rejections": 0,
+          "memory_writes": 0,
+          "stale_memories_skipped": 0,
+          "revisions": 0,
+          "duplicate_events": 0,
+          "elapsed_seconds": 5.971685
+        },
+        "diagnostics": [],
+        "error": null,
+        "evidence_gate_scope": "reference identity and exact excerpt membership; not semantic entailment"
+      },
+      "scores": {
+        "rule_correct": true,
+        "completed": true,
+        "expected_evidence_recall": 1.0,
+        "all_expected_evidence": true,
+        "unanswerable_false_answer": false,
+        "citation_count": 1,
+        "scoring_method": "public_required_terms_and_status_v1"
+      }
+    },
+    {
+      "id": "vision-03",
+      "mode": "optimized",
+      "category": "cross_image_arithmetic",
+      "question": "综合 Completed tasks 图与 Failed tasks 图，North 区域的完成数量减去失败数量，结果是多少？",
+      "doc_id": "vision_lab",
+      "expected_answer": "18减2等于16",
+      "timestamp_utc": "2026-10-10T06:24:41.587271+00:00",
+      "config_fingerprint": "46bf1e7dddbc0314e461d052aecf1f8bfc4747b2949ea94fcb1e912ad1df15f3",
+      "requested_model": "deepseek-flash",
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "usage": {
+        "requests": 5,
+        "prompt_tokens": 10492,
+        "completion_tokens": 748,
+        "api_retries": 0
+      },
+      "agent_tool_trace": [
+        {
+          "role": "actor",
+          "turn": 0,
+          "tool": "get_outline"
+        },
+        {
+          "role": "actor",
+          "turn": 1,
+          "tool": "get_image"
+        },
+        {
+          "role": "actor",
+          "turn": 1,
+          "tool": "get_image"
+        },
+        {
+          "role": "reviewer",
+          "turn": 0,
+          "tool": "get_outline"
+        },
+        {
+          "role": "reviewer",
+          "turn": 0,
+          "tool": "get_image"
+        },
+        {
+          "role": "reviewer",
+          "turn": 0,
+          "tool": "get_image"
+        }
+      ],
+      "result": {
+        "task_id": "optimized-vision-03",
+        "mode": "optimized",
+        "state": "completed",
+        "answer": {
+          "answer": "North 区域完成数量为 18（fig1 柱状图），失败数量为 2（fig2 表格）。18 − 2 = 16。",
+          "status": "answered",
+          "evidence": [
+            {
+              "id": "vision_lab:image:fig1",
+              "doc_id": "vision_lab",
+              "page": 1,
+              "section_id": "fig1",
+              "text": "Completed tasks by region: North, East, West. This chart contains synthetic completion counts; read the image for the values.",
+              "source_type": "image"
+            },
+            {
+              "id": "vision_lab:image:fig2",
+              "doc_id": "vision_lab",
+              "page": 2,
+              "section_id": "fig2",
+              "text": "Failed tasks by region: North, East, West. This table contains synthetic failure counts from the same sample; read the image for the values.",
+              "source_type": "image"
+            }
+          ]
+        },
+        "review": {
+          "verdict": "accept",
+          "answer": {
+            "answer": "North 区域完成数量为 18（fig1 柱状图），失败数量为 2（fig2 表格）。18 − 2 = 16。",
+            "status": "answered",
+            "evidence": [
+              {
+                "id": "vision_lab:image:fig1",
+                "doc_id": "vision_lab",
+                "page": 1,
+                "section_id": "fig1",
+                "text": "Completed tasks by region: North, East, West. This chart contains synthetic completion counts; read the image for the values.",
+                "source_type": "image"
+              },
+              {
+                "id": "vision_lab:image:fig2",
+                "doc_id": "vision_lab",
+                "page": 2,
+                "section_id": "fig2",
+                "text": "Failed tasks by region: North, East, West. This table contains synthetic failure counts from the same sample; read the image for the values.",
+                "source_type": "image"
+              }
+            ]
+          },
+          "reason": "fig1 柱状图显示 North 完成数为 18（East 27、West 12）；fig2 表格显示 North 失败数为 2（East 3、West 1）。18 − 2 = 16，与草稿一致，引用与数值均正确。",
+          "memory_candidate": null
+        },
+        "events": [
+          {
+            "event_id": "6b10f53542d74ff487154e2d42838876",
+            "task_id": "optimized-vision-03",
+            "type": "task_submitted",
+            "state": "pending",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:35.239787+00:00"
+          },
+          {
+            "event_id": "e82ed65a17614f9a9cd0e6c35ebc8ba3",
+            "task_id": "optimized-vision-03",
+            "type": "state_changed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:35.239787+00:00"
+          },
+          {
+            "event_id": "59291641046d434aa2d7f76d09a6f6a8",
+            "task_id": "optimized-vision-03",
+            "type": "tool_started",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:36.108082+00:00",
+            "tool": "get_outline",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "f4455765a2264bb1a6537906e27a9dc6",
+            "task_id": "optimized-vision-03",
+            "type": "tool_completed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:36.118898+00:00",
+            "tool": "get_outline",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "ddc9f03262cd450f8faf486de0168e43",
+            "task_id": "optimized-vision-03",
+            "type": "tool_started",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:37.193199+00:00",
+            "tool": "get_image",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "cd1a6ad9777c46129178824adcc4ead7",
+            "task_id": "optimized-vision-03",
+            "type": "tool_completed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:37.204886+00:00",
+            "tool": "get_image",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "a080cf7f025144c5a0529c42f2de75c0",
+            "task_id": "optimized-vision-03",
+            "type": "tool_started",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:37.204886+00:00",
+            "tool": "get_image",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "765a3fc758eb4b62adb1db09b723dc4f",
+            "task_id": "optimized-vision-03",
+            "type": "tool_completed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:37.215485+00:00",
+            "tool": "get_image",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "9de0221f314a40df84d3b6e0b7156349",
+            "task_id": "optimized-vision-03",
+            "type": "actor_completed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:38.863587+00:00"
+          },
+          {
+            "event_id": "3a797dbf41774621ac9232c3008e3065",
+            "task_id": "optimized-vision-03",
+            "type": "state_changed",
+            "state": "reviewing",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:38.863587+00:00"
+          },
+          {
+            "event_id": "52e55704abee4af38aaa2313c8a918e2",
+            "task_id": "optimized-vision-03",
+            "type": "tool_cache_hit",
+            "state": "reviewing",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:39.828106+00:00",
+            "tool": "get_outline"
+          },
+          {
+            "event_id": "bd4a1896855245fb821e658ff0719f78",
+            "task_id": "optimized-vision-03",
+            "type": "tool_cache_hit",
+            "state": "reviewing",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:39.828106+00:00",
+            "tool": "get_image"
+          },
+          {
+            "event_id": "ef9072b5c2014bf18ff75bf4f0d87f0a",
+            "task_id": "optimized-vision-03",
+            "type": "tool_cache_hit",
+            "state": "reviewing",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:39.828106+00:00",
+            "tool": "get_image"
+          },
+          {
+            "event_id": "edeac6a61bdb4bb6905be43d5ceef583",
+            "task_id": "optimized-vision-03",
+            "type": "review_completed",
+            "state": "reviewing",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:41.586699+00:00"
+          },
+          {
+            "event_id": "3c89e398cf594eae92bb7ee7fa607a07",
+            "task_id": "optimized-vision-03",
+            "type": "state_changed",
+            "state": "validating",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:41.586699+00:00"
+          },
+          {
+            "event_id": "dbe53358ca1e40e8a2bbf64e233cbe89",
+            "task_id": "optimized-vision-03",
+            "type": "tool_cache_hit",
+            "state": "validating",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:41.586699+00:00",
+            "tool": "get_image"
+          },
+          {
+            "event_id": "b13f845ad39b4eb4af06c03543ebe4cd",
+            "task_id": "optimized-vision-03",
+            "type": "tool_cache_hit",
+            "state": "validating",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:41.586699+00:00",
+            "tool": "get_image"
+          },
+          {
+            "event_id": "b5690ee5b1c74599a7a8323f942100d7",
+            "task_id": "optimized-vision-03",
+            "type": "validation_completed",
+            "state": "validating",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:41.587271+00:00"
+          },
+          {
+            "event_id": "7264673800834e68a03346f7aeb1ea76",
+            "task_id": "optimized-vision-03",
+            "type": "state_changed",
+            "state": "completed",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:41.587271+00:00"
+          },
+          {
+            "event_id": "417b84209bfe410186d57b51d20514a0",
+            "task_id": "optimized-vision-03",
+            "type": "task_completed",
+            "state": "completed",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:41.587271+00:00"
+          }
+        ],
+        "metrics": {
+          "tool_calls": 3,
+          "tool_requests": 8,
+          "retries": 0,
+          "cache_hits": 5,
+          "tool_failures": 0,
+          "tool_timeouts": 0,
+          "actor_calls": 1,
+          "reviewer_calls": 1,
+          "evidence_checks": 1,
+          "evidence_rejections": 0,
+          "memory_writes": 0,
+          "stale_memories_skipped": 0,
+          "revisions": 0,
+          "duplicate_events": 0,
+          "elapsed_seconds": 6.347875
+        },
+        "diagnostics": [],
+        "error": null,
+        "evidence_gate_scope": "reference identity and exact excerpt membership; not semantic entailment"
+      },
+      "scores": {
+        "rule_correct": true,
+        "completed": true,
+        "expected_evidence_recall": 1.0,
+        "all_expected_evidence": true,
+        "unanswerable_false_answer": false,
+        "citation_count": 2,
+        "scoring_method": "public_required_terms_and_status_v1"
+      }
+    }
+  ]
+}

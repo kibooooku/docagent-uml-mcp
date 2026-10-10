@@ -1,0 +1,11 @@
+{
+  "tests": 62,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "duration_seconds": 11.47,
+  "ruff": "passed",
+  "environment": "Windows; Python 3.12.14; exact packages in requirements.lock",
+  "java": "JDK 11.0.28 --release 11",
+  "scope": "local execution; real MCP subprocess; 120-page integration; no model API calls in pytest"
+}

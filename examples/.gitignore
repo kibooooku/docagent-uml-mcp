@@ -1,0 +1,4 @@
+# Only these synthetic example PDFs are allowed in the public repository.
+!documents/harbor.pdf
+!documents/orchard.pdf
+!documents/atlas.pdf

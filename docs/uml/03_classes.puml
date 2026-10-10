@@ -1,0 +1,43 @@
+@startuml
+skinparam monochrome true
+skinparam defaultFontName Microsoft YaHei
+class WorkflowEngine {
+  +run(question, doc_id, mode)
+  +cancel(task_id)
+  -actor
+  -reviewer
+  -gateway
+}
+class EventBus {
+  +subscribe(...)
+  +publish(...)
+  -_dispatch(...)
+}
+class EvidenceGate {
+  +validate(answer, ...)
+}
+class MemoryStore {
+  +snapshot(doc_id)
+  +add(...)
+  +freeze()
+}
+class GuardedGateway {
+  +call(name, arguments)
+  +list_tools()
+}
+class LocalGateway {
+  +call(name, arguments)
+}
+class MCPGateway {
+  +call(name, arguments)
+}
+WorkflowEngine --> EventBus
+WorkflowEngine --> EvidenceGate
+WorkflowEngine --> MemoryStore
+WorkflowEngine --> GuardedGateway
+EvidenceGate --> GuardedGateway
+GuardedGateway --> LocalGateway : compatible interface
+GuardedGateway --> MCPGateway : compatible interface
+note bottom of LocalGateway : baseline invokes LocalGateway directly
+via a counting wrapper, without GuardedGateway
+@enduml

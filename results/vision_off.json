@@ -1,0 +1,1027 @@
+{
+  "benchmark": "3-question image-only integration fixture; not an accuracy benchmark",
+  "model": "deepseek-flash",
+  "vision": false,
+  "protocol": "2025-06-18",
+  "mcp_sdk": "1.12.4",
+  "config_fingerprint": "9b221ca726ffc0b8a29140ec1b6b2ccf919db149975055c2850e202f2e5f856b",
+  "memory_policy": "empty and frozen separately for each question",
+  "concurrency": 1,
+  "limitations": [
+    "Rule scoring is not semantic entailment evaluation.",
+    "Single trial per question; small synthetic sample.",
+    "Latency includes provider variation and concurrent load.",
+    "Baseline is an independent educational reconstruction, not the authors' exact implementation."
+  ],
+  "summary": {
+    "optimized": {
+      "n": 3,
+      "rule_correct": 0,
+      "rule_accuracy": 0.0,
+      "accuracy_wilson_95": [
+        0.0,
+        0.5615
+      ],
+      "completion_rate": 1.0,
+      "mean_evidence_recall": 1.0,
+      "mean_elapsed_seconds": 7.909118666666667,
+      "median_elapsed_seconds": 7.51982,
+      "p95_elapsed_seconds": 9.799556,
+      "mean_tool_calls": 4,
+      "model_requests": 19,
+      "prompt_tokens": 29148,
+      "completion_tokens": 3008,
+      "categories": {
+        "cross_image_arithmetic": {
+          "n": 1,
+          "correct": 0
+        },
+        "image_arithmetic": {
+          "n": 1,
+          "correct": 0
+        },
+        "image_reading": {
+          "n": 1,
+          "correct": 0
+        }
+      }
+    }
+  },
+  "records": [
+    {
+      "id": "vision-01",
+      "mode": "optimized",
+      "category": "image_reading",
+      "question": "根据图中的 Completed tasks，East 区域的完成数量是多少？",
+      "doc_id": "vision_lab",
+      "expected_answer": "East完成数量为27",
+      "timestamp_utc": "2026-10-10T06:23:42.509460+00:00",
+      "config_fingerprint": "9b221ca726ffc0b8a29140ec1b6b2ccf919db149975055c2850e202f2e5f856b",
+      "requested_model": "deepseek-flash",
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "usage": {
+        "requests": 6,
+        "prompt_tokens": 8212,
+        "completion_tokens": 682,
+        "api_retries": 0
+      },
+      "agent_tool_trace": [
+        {
+          "role": "actor",
+          "turn": 0,
+          "tool": "get_outline"
+        },
+        {
+          "role": "actor",
+          "turn": 1,
+          "tool": "get_image"
+        },
+        {
+          "role": "reviewer",
+          "turn": 0,
+          "tool": "get_outline"
+        },
+        {
+          "role": "reviewer",
+          "turn": 0,
+          "tool": "get_image"
+        }
+      ],
+      "result": {
+        "task_id": "optimized-vision-01",
+        "mode": "optimized",
+        "state": "completed",
+        "answer": {
+          "answer": "无法确定。图中 fig1 的标题为“Completed tasks by region: North, East, West”，但图像内容不可读取（vision_enabled=false），因此 East 区域的具体完成数量无法从文档中获取。",
+          "status": "insufficient",
+          "evidence": [
+            {
+              "id": "vision_lab:image:fig1",
+              "doc_id": "vision_lab",
+              "page": 1,
+              "section_id": "fig1",
+              "text": "Completed tasks by region: North, East, West. This chart contains synthetic completion counts; read the image for the values.",
+              "source_type": "image"
+            }
+          ]
+        },
+        "review": {
+          "verdict": "accept",
+          "answer": {
+            "answer": "无法确定。图中 fig1 的标题为“Completed tasks by region: North, East, West”，但图像内容不可读取（vision_enabled=false），因此 East 区域的具体完成数量无法从文档中获取。",
+            "status": "insufficient",
+            "evidence": [
+              {
+                "id": "vision_lab:image:fig1",
+                "doc_id": "vision_lab",
+                "page": 1,
+                "section_id": "fig1",
+                "text": "Completed tasks by region: North, East, West. This chart contains synthetic completion counts; read the image for the values.",
+                "source_type": "image"
+              }
+            ]
+          },
+          "reason": "Independent retrieval confirms fig1 is the only source for completed-task counts and its caption directs reading the image for values; get_image returned vision_enabled=false with no readable values, so the East count is not obtainable from document text. The draft's insufficient status and citation are accurate.",
+          "memory_candidate": null
+        },
+        "events": [
+          {
+            "event_id": "fc9d31153ed84f4fa13086af61fe6ca3",
+            "task_id": "optimized-vision-01",
+            "type": "task_submitted",
+            "state": "pending",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:36.101115+00:00"
+          },
+          {
+            "event_id": "b99a495aeadd44119f76e1f661cbe6e9",
+            "task_id": "optimized-vision-01",
+            "type": "state_changed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:36.101115+00:00"
+          },
+          {
+            "event_id": "79323055429545ada5bc8e189166084b",
+            "task_id": "optimized-vision-01",
+            "type": "tool_started",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:37.201306+00:00",
+            "tool": "get_outline",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "3a675ba8a2724fdc8720e5bb59e87090",
+            "task_id": "optimized-vision-01",
+            "type": "tool_completed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:37.211129+00:00",
+            "tool": "get_outline",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "59d253cb810e4d118309bb7739aa5583",
+            "task_id": "optimized-vision-01",
+            "type": "tool_started",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:38.230965+00:00",
+            "tool": "get_image",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "16e6dd64b8ce42c69778aebbc30b5f4a",
+            "task_id": "optimized-vision-01",
+            "type": "tool_completed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:38.242533+00:00",
+            "tool": "get_image",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "84efc5538f9c44f4bbeeea467e81bfc1",
+            "task_id": "optimized-vision-01",
+            "type": "actor_completed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:40.582077+00:00"
+          },
+          {
+            "event_id": "0131971018954f3195170a31a87485c0",
+            "task_id": "optimized-vision-01",
+            "type": "state_changed",
+            "state": "reviewing",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:40.582077+00:00"
+          },
+          {
+            "event_id": "fcdfa1ebecd4465baec3ce3bc0be0166",
+            "task_id": "optimized-vision-01",
+            "type": "tool_cache_hit",
+            "state": "reviewing",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:41.268398+00:00",
+            "tool": "get_outline"
+          },
+          {
+            "event_id": "b493326f852542509311d249c19590a6",
+            "task_id": "optimized-vision-01",
+            "type": "tool_cache_hit",
+            "state": "reviewing",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:41.268398+00:00",
+            "tool": "get_image"
+          },
+          {
+            "event_id": "992bf79743f44c92a62faa23ca30f7ce",
+            "task_id": "optimized-vision-01",
+            "type": "review_completed",
+            "state": "reviewing",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:42.508367+00:00"
+          },
+          {
+            "event_id": "b07f99206b604878b10e2a48460c80fb",
+            "task_id": "optimized-vision-01",
+            "type": "state_changed",
+            "state": "validating",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:42.508367+00:00"
+          },
+          {
+            "event_id": "6dcfece6881b413b894e4cbaa7010639",
+            "task_id": "optimized-vision-01",
+            "type": "tool_cache_hit",
+            "state": "validating",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:42.508916+00:00",
+            "tool": "get_image"
+          },
+          {
+            "event_id": "49c82c93042a40f4b5180cc24a797bff",
+            "task_id": "optimized-vision-01",
+            "type": "validation_completed",
+            "state": "validating",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:42.508916+00:00"
+          },
+          {
+            "event_id": "950ab01015d948d7a667a3c749aa8fe2",
+            "task_id": "optimized-vision-01",
+            "type": "state_changed",
+            "state": "completed",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:42.508916+00:00"
+          },
+          {
+            "event_id": "2022a092ae1e4ca7bc9df047a75fb636",
+            "task_id": "optimized-vision-01",
+            "type": "task_completed",
+            "state": "completed",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:42.508916+00:00"
+          }
+        ],
+        "metrics": {
+          "tool_calls": 2,
+          "tool_requests": 5,
+          "retries": 0,
+          "cache_hits": 3,
+          "tool_failures": 0,
+          "tool_timeouts": 0,
+          "actor_calls": 1,
+          "reviewer_calls": 1,
+          "evidence_checks": 1,
+          "evidence_rejections": 0,
+          "memory_writes": 0,
+          "stale_memories_skipped": 0,
+          "revisions": 0,
+          "duplicate_events": 0,
+          "elapsed_seconds": 6.40798
+        },
+        "diagnostics": [],
+        "error": null,
+        "evidence_gate_scope": "reference identity and exact excerpt membership; not semantic entailment"
+      },
+      "scores": {
+        "rule_correct": false,
+        "completed": true,
+        "expected_evidence_recall": 1.0,
+        "all_expected_evidence": true,
+        "unanswerable_false_answer": false,
+        "citation_count": 1,
+        "scoring_method": "public_required_terms_and_status_v1"
+      }
+    },
+    {
+      "id": "vision-02",
+      "mode": "optimized",
+      "category": "image_arithmetic",
+      "question": "根据 Completed tasks 图，East 区域的完成数量减去 West 区域的完成数量，差值是多少？",
+      "doc_id": "vision_lab",
+      "expected_answer": "27减12等于15",
+      "timestamp_utc": "2026-10-10T06:23:51.785515+00:00",
+      "config_fingerprint": "9b221ca726ffc0b8a29140ec1b6b2ccf919db149975055c2850e202f2e5f856b",
+      "requested_model": "deepseek-flash",
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "usage": {
+        "requests": 6,
+        "prompt_tokens": 9060,
+        "completion_tokens": 875,
+        "api_retries": 0
+      },
+      "agent_tool_trace": [
+        {
+          "role": "actor",
+          "turn": 0,
+          "tool": "get_outline"
+        },
+        {
+          "role": "actor",
+          "turn": 0,
+          "tool": "search"
+        },
+        {
+          "role": "actor",
+          "turn": 1,
+          "tool": "get_image"
+        },
+        {
+          "role": "actor",
+          "turn": 2,
+          "tool": "get_page_images"
+        },
+        {
+          "role": "reviewer",
+          "turn": 0,
+          "tool": "get_outline"
+        },
+        {
+          "role": "reviewer",
+          "turn": 0,
+          "tool": "get_image"
+        }
+      ],
+      "result": {
+        "task_id": "optimized-vision-02",
+        "mode": "optimized",
+        "state": "completed",
+        "answer": {
+          "answer": "无法确定。Completed tasks 图（fig1）的数值只存在于图像中，文档文本明确说明未转录这些数字（\"The text descriptions intentionally do not transcribe the numeric values.\"），而当前图像内容无法读取（vision_enabled=false），因此无法获得 East 与 West 的完成数量，也就无法计算差值。",
+          "status": "insufficient",
+          "evidence": [
+            {
+              "id": "vision_lab:image:fig1",
+              "doc_id": "vision_lab",
+              "page": 1,
+              "section_id": "fig1",
+              "text": "Completed tasks by region: North, East, West. This chart contains synthetic completion counts; read the image for the values.",
+              "source_type": "image"
+            },
+            {
+              "id": "vision_lab:text:s1",
+              "doc_id": "vision_lab",
+              "page": 1,
+              "section_id": "s1",
+              "text": "This fictional regional operations sample contains a completed-task chart and a failed-task table for North, East, and West. Read the images to find their counts. The text descriptions intentionally do not transcribe the numeric values.",
+              "source_type": "text"
+            }
+          ]
+        },
+        "review": {
+          "verdict": "accept",
+          "answer": {
+            "answer": "无法确定。Completed tasks 图（fig1）的数值只存在于图像中，文档文本明确说明未转录这些数字（\"The text descriptions intentionally do not transcribe the numeric values.\"），而当前图像内容无法读取（vision_enabled=false），因此无法获得 East 与 West 的完成数量，也就无法计算差值。",
+            "status": "insufficient",
+            "evidence": [
+              {
+                "id": "vision_lab:image:fig1",
+                "doc_id": "vision_lab",
+                "page": 1,
+                "section_id": "fig1",
+                "text": "Completed tasks by region: North, East, West. This chart contains synthetic completion counts; read the image for the values.",
+                "source_type": "image"
+              },
+              {
+                "id": "vision_lab:text:s1",
+                "doc_id": "vision_lab",
+                "page": 1,
+                "section_id": "s1",
+                "text": "This fictional regional operations sample contains a completed-task chart and a failed-task table for North, East, and West. Read the images to find their counts. The text descriptions intentionally do not transcribe the numeric values.",
+                "source_type": "text"
+              }
+            ]
+          },
+          "reason": "Independent retrieval confirms fig1 is an image-only chart (vision_enabled=false) and s1 states numeric values are intentionally not transcribed, so East and West completion counts are unavailable and the difference cannot be computed. The draft's insufficient status and evidence are correct.",
+          "memory_candidate": null
+        },
+        "events": [
+          {
+            "event_id": "5d43a8955c944fcc9075d93236c0768b",
+            "task_id": "optimized-vision-02",
+            "type": "task_submitted",
+            "state": "pending",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:44.266352+00:00"
+          },
+          {
+            "event_id": "918d82017e434ed2b68e5d7cd5ef1699",
+            "task_id": "optimized-vision-02",
+            "type": "state_changed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:44.267458+00:00"
+          },
+          {
+            "event_id": "ba8f040750994173b52f535407491814",
+            "task_id": "optimized-vision-02",
+            "type": "tool_started",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:45.446713+00:00",
+            "tool": "get_outline",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "827234321a28482aaef13dddfd822786",
+            "task_id": "optimized-vision-02",
+            "type": "tool_completed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:45.456541+00:00",
+            "tool": "get_outline",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "d4549b8bf81345eaab129311168fb1d4",
+            "task_id": "optimized-vision-02",
+            "type": "tool_started",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:45.456541+00:00",
+            "tool": "search",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "f8fd16e2863d4946af77c627e0898775",
+            "task_id": "optimized-vision-02",
+            "type": "tool_completed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:45.464614+00:00",
+            "tool": "search",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "8abfb928c454471f932ce2dfa1c088a9",
+            "task_id": "optimized-vision-02",
+            "type": "tool_started",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:46.438958+00:00",
+            "tool": "get_image",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "d33e79a72eb44f0fa80d71533b120f26",
+            "task_id": "optimized-vision-02",
+            "type": "tool_completed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:46.450673+00:00",
+            "tool": "get_image",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "7b517c76f35b4dfca2c41c12edd40638",
+            "task_id": "optimized-vision-02",
+            "type": "tool_started",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:47.485037+00:00",
+            "tool": "get_page_images",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "5a8a6f9a282d4ae7a4505a16e9e53f1d",
+            "task_id": "optimized-vision-02",
+            "type": "tool_completed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:47.845886+00:00",
+            "tool": "get_page_images",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "2b4074e556e24cecaf30991535244c9d",
+            "task_id": "optimized-vision-02",
+            "type": "actor_completed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:49.288860+00:00"
+          },
+          {
+            "event_id": "11b16eb321bb4e3a90c182bd4176750e",
+            "task_id": "optimized-vision-02",
+            "type": "state_changed",
+            "state": "reviewing",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:49.288860+00:00"
+          },
+          {
+            "event_id": "6335e52591974485b21269c866ee39c1",
+            "task_id": "optimized-vision-02",
+            "type": "tool_cache_hit",
+            "state": "reviewing",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:50.381957+00:00",
+            "tool": "get_outline"
+          },
+          {
+            "event_id": "1882e6659d8e494691ed528f49fe2b61",
+            "task_id": "optimized-vision-02",
+            "type": "tool_cache_hit",
+            "state": "reviewing",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:50.382511+00:00",
+            "tool": "get_image"
+          },
+          {
+            "event_id": "39e75752cd3947c1919ba4820887259a",
+            "task_id": "optimized-vision-02",
+            "type": "review_completed",
+            "state": "reviewing",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:51.776127+00:00"
+          },
+          {
+            "event_id": "a9883cd5444d448aba484a6ce1774553",
+            "task_id": "optimized-vision-02",
+            "type": "state_changed",
+            "state": "validating",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:51.776127+00:00"
+          },
+          {
+            "event_id": "c420b7bf21284376bb6621d689ff2107",
+            "task_id": "optimized-vision-02",
+            "type": "tool_cache_hit",
+            "state": "validating",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:51.776688+00:00",
+            "tool": "get_image"
+          },
+          {
+            "event_id": "34bfd9c8ab5a42dead40056ba9575334",
+            "task_id": "optimized-vision-02",
+            "type": "tool_started",
+            "state": "validating",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:51.776688+00:00",
+            "tool": "get_section_content",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "ab2bce53c9ff4a46bb2267abd592f308",
+            "task_id": "optimized-vision-02",
+            "type": "tool_completed",
+            "state": "validating",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:51.785515+00:00",
+            "tool": "get_section_content",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "e91b2a7fa24849a688b82ef5d3259bd2",
+            "task_id": "optimized-vision-02",
+            "type": "validation_completed",
+            "state": "validating",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:51.785515+00:00"
+          },
+          {
+            "event_id": "b8bccafe982a4a31947917a550adf1e1",
+            "task_id": "optimized-vision-02",
+            "type": "state_changed",
+            "state": "completed",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:51.785515+00:00"
+          },
+          {
+            "event_id": "994f9089834843aeb5b82916390b7740",
+            "task_id": "optimized-vision-02",
+            "type": "task_completed",
+            "state": "completed",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:51.785515+00:00"
+          }
+        ],
+        "metrics": {
+          "tool_calls": 5,
+          "tool_requests": 8,
+          "retries": 0,
+          "cache_hits": 3,
+          "tool_failures": 0,
+          "tool_timeouts": 0,
+          "actor_calls": 1,
+          "reviewer_calls": 1,
+          "evidence_checks": 1,
+          "evidence_rejections": 0,
+          "memory_writes": 0,
+          "stale_memories_skipped": 0,
+          "revisions": 0,
+          "duplicate_events": 0,
+          "elapsed_seconds": 7.51982
+        },
+        "diagnostics": [],
+        "error": null,
+        "evidence_gate_scope": "reference identity and exact excerpt membership; not semantic entailment"
+      },
+      "scores": {
+        "rule_correct": false,
+        "completed": true,
+        "expected_evidence_recall": 1.0,
+        "all_expected_evidence": true,
+        "unanswerable_false_answer": false,
+        "citation_count": 2,
+        "scoring_method": "public_required_terms_and_status_v1"
+      }
+    },
+    {
+      "id": "vision-03",
+      "mode": "optimized",
+      "category": "cross_image_arithmetic",
+      "question": "综合 Completed tasks 图与 Failed tasks 图，North 区域的完成数量减去失败数量，结果是多少？",
+      "doc_id": "vision_lab",
+      "expected_answer": "18减2等于16",
+      "timestamp_utc": "2026-10-10T06:24:03.437981+00:00",
+      "config_fingerprint": "9b221ca726ffc0b8a29140ec1b6b2ccf919db149975055c2850e202f2e5f856b",
+      "requested_model": "deepseek-flash",
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "usage": {
+        "requests": 7,
+        "prompt_tokens": 11876,
+        "completion_tokens": 1451,
+        "api_retries": 0
+      },
+      "agent_tool_trace": [
+        {
+          "role": "actor",
+          "turn": 0,
+          "tool": "get_outline"
+        },
+        {
+          "role": "actor",
+          "turn": 1,
+          "tool": "get_image"
+        },
+        {
+          "role": "actor",
+          "turn": 1,
+          "tool": "get_image"
+        },
+        {
+          "role": "actor",
+          "turn": 2,
+          "tool": "get_section_content"
+        },
+        {
+          "role": "actor",
+          "turn": 2,
+          "tool": "search"
+        },
+        {
+          "role": "reviewer",
+          "turn": 0,
+          "tool": "get_outline"
+        },
+        {
+          "role": "reviewer",
+          "turn": 0,
+          "tool": "get_image"
+        },
+        {
+          "role": "reviewer",
+          "turn": 0,
+          "tool": "get_image"
+        }
+      ],
+      "result": {
+        "task_id": "optimized-vision-03",
+        "mode": "optimized",
+        "state": "completed",
+        "answer": {
+          "answer": "无法计算。文档说明 Completed tasks 图与 Failed tasks 表仅以图像形式给出 North/East/West 的数值，文本描述有意不转录这些数字（vision_lab:text:s1）。当前图像内容不可读取（vision_enabled=false），因此无法获得 North 区域的完成数量与失败数量，无法求差。",
+          "status": "insufficient",
+          "evidence": [
+            {
+              "id": "vision_lab:text:s1",
+              "doc_id": "vision_lab",
+              "page": 1,
+              "section_id": "s1",
+              "text": "This fictional regional operations sample contains a completed-task chart and a failed-task table for North, East, and West. Read the images to find their counts. The text descriptions intentionally do not transcribe the numeric values.",
+              "source_type": "text"
+            },
+            {
+              "id": "vision_lab:image:fig1",
+              "doc_id": "vision_lab",
+              "page": 1,
+              "section_id": "fig1",
+              "text": "Completed tasks by region: North, East, West. This chart contains synthetic completion counts; read the image for the values.",
+              "source_type": "image"
+            },
+            {
+              "id": "vision_lab:image:fig2",
+              "doc_id": "vision_lab",
+              "page": 2,
+              "section_id": "fig2",
+              "text": "Failed tasks by region: North, East, West. This table contains synthetic failure counts from the same sample; read the image for the values.",
+              "source_type": "image"
+            }
+          ]
+        },
+        "review": {
+          "verdict": "accept",
+          "answer": {
+            "answer": "无法计算。文档说明 Completed tasks 图与 Failed tasks 表仅以图像形式给出 North/East/West 的数值，文本描述有意不转录这些数字（vision_lab:text:s1）。当前图像内容不可读取（vision_enabled=false），因此无法获得 North 区域的完成数量与失败数量，无法求差。",
+            "status": "insufficient",
+            "evidence": [
+              {
+                "id": "vision_lab:text:s1",
+                "doc_id": "vision_lab",
+                "page": 1,
+                "section_id": "s1",
+                "text": "This fictional regional operations sample contains a completed-task chart and a failed-task table for North, East, and West. Read the images to find their counts. The text descriptions intentionally do not transcribe the numeric values.",
+                "source_type": "text"
+              },
+              {
+                "id": "vision_lab:image:fig1",
+                "doc_id": "vision_lab",
+                "page": 1,
+                "section_id": "fig1",
+                "text": "Completed tasks by region: North, East, West. This chart contains synthetic completion counts; read the image for the values.",
+                "source_type": "image"
+              },
+              {
+                "id": "vision_lab:image:fig2",
+                "doc_id": "vision_lab",
+                "page": 2,
+                "section_id": "fig2",
+                "text": "Failed tasks by region: North, East, West. This table contains synthetic failure counts from the same sample; read the image for the values.",
+                "source_type": "image"
+              }
+            ]
+          },
+          "reason": "Independent retrieval confirms the document has only section s1 plus figures fig1 (p1) and fig2 (p2); both image reads returned vision_enabled=false with no numeric values, and s1 explicitly states the text does not transcribe the numbers. No North completion or failure count is available, so the difference cannot be computed; the draft's insufficient status and evidence are correct.",
+          "memory_candidate": null
+        },
+        "events": [
+          {
+            "event_id": "36037e05112a4068bf17f710e57ec168",
+            "task_id": "optimized-vision-03",
+            "type": "task_submitted",
+            "state": "pending",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:53.638289+00:00"
+          },
+          {
+            "event_id": "c71c9cb61d604c4682d3c33b15d6c552",
+            "task_id": "optimized-vision-03",
+            "type": "state_changed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:53.638838+00:00"
+          },
+          {
+            "event_id": "1dbd2d82446546b69d4367d8b22719e0",
+            "task_id": "optimized-vision-03",
+            "type": "tool_started",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:55.077068+00:00",
+            "tool": "get_outline",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "8e127e079d6f4a0f91ed5581705974d7",
+            "task_id": "optimized-vision-03",
+            "type": "tool_completed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:55.088058+00:00",
+            "tool": "get_outline",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "3107a7e2df2c4f9ab8a9da94b02bed67",
+            "task_id": "optimized-vision-03",
+            "type": "tool_started",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:55.827375+00:00",
+            "tool": "get_image",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "e512b70585c84f68a27ac4b0403036be",
+            "task_id": "optimized-vision-03",
+            "type": "tool_completed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:55.839394+00:00",
+            "tool": "get_image",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "df512b28be6f440ca85a0dc16024742f",
+            "task_id": "optimized-vision-03",
+            "type": "tool_started",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:55.839394+00:00",
+            "tool": "get_image",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "8972a75dc7024b1baa7c091e0944443e",
+            "task_id": "optimized-vision-03",
+            "type": "tool_completed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:55.850006+00:00",
+            "tool": "get_image",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "d172aebce2ca4a30aab2df2dfa9382a1",
+            "task_id": "optimized-vision-03",
+            "type": "tool_started",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:57.156809+00:00",
+            "tool": "get_section_content",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "a961a934e0d34c38bf6427eea0a76279",
+            "task_id": "optimized-vision-03",
+            "type": "tool_completed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:57.165146+00:00",
+            "tool": "get_section_content",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "66d6a415c7144d8aad5a467c1d36fedc",
+            "task_id": "optimized-vision-03",
+            "type": "tool_started",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:57.165146+00:00",
+            "tool": "search",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "32f5b00ba703453c91bd957d76cd954a",
+            "task_id": "optimized-vision-03",
+            "type": "tool_completed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:23:57.175127+00:00",
+            "tool": "search",
+            "tool_attempt": 1
+          },
+          {
+            "event_id": "c1a10f4f296e45dfb43435390bc55fb7",
+            "task_id": "optimized-vision-03",
+            "type": "actor_completed",
+            "state": "acting",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:00.224296+00:00"
+          },
+          {
+            "event_id": "0a7bae36a81f4d469c41355dac9744e7",
+            "task_id": "optimized-vision-03",
+            "type": "state_changed",
+            "state": "reviewing",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:00.224296+00:00"
+          },
+          {
+            "event_id": "d9977f30333d42afbde8b44b662af998",
+            "task_id": "optimized-vision-03",
+            "type": "tool_cache_hit",
+            "state": "reviewing",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:01.412257+00:00",
+            "tool": "get_outline"
+          },
+          {
+            "event_id": "48ee77d05553404aba5f10856d72cd54",
+            "task_id": "optimized-vision-03",
+            "type": "tool_cache_hit",
+            "state": "reviewing",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:01.412257+00:00",
+            "tool": "get_image"
+          },
+          {
+            "event_id": "282badac2bb9488fa4de6faaeb72d32c",
+            "task_id": "optimized-vision-03",
+            "type": "tool_cache_hit",
+            "state": "reviewing",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:01.412257+00:00",
+            "tool": "get_image"
+          },
+          {
+            "event_id": "d5305497513844c1a43169541df5be1e",
+            "task_id": "optimized-vision-03",
+            "type": "review_completed",
+            "state": "reviewing",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:03.436856+00:00"
+          },
+          {
+            "event_id": "4c22cea2b21b4841a425b225c3410cfc",
+            "task_id": "optimized-vision-03",
+            "type": "state_changed",
+            "state": "validating",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:03.437417+00:00"
+          },
+          {
+            "event_id": "f23ed718be0040b08a4db1de37831836",
+            "task_id": "optimized-vision-03",
+            "type": "tool_cache_hit",
+            "state": "validating",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:03.437417+00:00",
+            "tool": "get_section_content"
+          },
+          {
+            "event_id": "b279a2359b47421789c90e2057529435",
+            "task_id": "optimized-vision-03",
+            "type": "tool_cache_hit",
+            "state": "validating",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:03.437417+00:00",
+            "tool": "get_image"
+          },
+          {
+            "event_id": "18d7c10c6c4941fbb9ad8e7f703d2e48",
+            "task_id": "optimized-vision-03",
+            "type": "tool_cache_hit",
+            "state": "validating",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:03.437417+00:00",
+            "tool": "get_image"
+          },
+          {
+            "event_id": "71dab1550ca74fb6ab2f86bb063098d5",
+            "task_id": "optimized-vision-03",
+            "type": "validation_completed",
+            "state": "validating",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:03.437417+00:00"
+          },
+          {
+            "event_id": "bd52b93d84db41d3a051893ac5d24e4b",
+            "task_id": "optimized-vision-03",
+            "type": "state_changed",
+            "state": "completed",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:03.437981+00:00"
+          },
+          {
+            "event_id": "fe6c9f3e4b6e4e8ea453ecf50ea67e5a",
+            "task_id": "optimized-vision-03",
+            "type": "task_completed",
+            "state": "completed",
+            "attempt": 0,
+            "timestamp": "2026-10-10T06:24:03.437981+00:00"
+          }
+        ],
+        "metrics": {
+          "tool_calls": 5,
+          "tool_requests": 11,
+          "retries": 0,
+          "cache_hits": 6,
+          "tool_failures": 0,
+          "tool_timeouts": 0,
+          "actor_calls": 1,
+          "reviewer_calls": 1,
+          "evidence_checks": 1,
+          "evidence_rejections": 0,
+          "memory_writes": 0,
+          "stale_memories_skipped": 0,
+          "revisions": 0,
+          "duplicate_events": 0,
+          "elapsed_seconds": 9.799556
+        },
+        "diagnostics": [],
+        "error": null,
+        "evidence_gate_scope": "reference identity and exact excerpt membership; not semantic entailment"
+      },
+      "scores": {
+        "rule_correct": false,
+        "completed": true,
+        "expected_evidence_recall": 1.0,
+        "all_expected_evidence": true,
+        "unanswerable_false_answer": false,
+        "citation_count": 3,
+        "scoring_method": "public_required_terms_and_status_v1"
+      }
+    }
+  ]
+}

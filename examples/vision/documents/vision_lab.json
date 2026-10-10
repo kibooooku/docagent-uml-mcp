@@ -1,0 +1,30 @@
+{
+  "doc_id": "vision_lab",
+  "title": "Vision Lab: fictional regional operations",
+  "page_count": 2,
+  "source_pdf": "vision_lab.pdf",
+  "sections": [
+    {
+      "id": "s1",
+      "page": 1,
+      "title": "About this image-only sample",
+      "text": "This fictional regional operations sample contains a completed-task chart and a failed-task table for North, East, and West. Read the images to find their counts. The text descriptions intentionally do not transcribe the numeric values."
+    }
+  ],
+  "tables": [],
+  "images": [
+    {
+      "id": "fig1",
+      "page": 1,
+      "path": "assets/completed.png",
+      "caption": "Completed tasks by region: North, East, West. This chart contains synthetic completion counts; read the image for the values."
+    },
+    {
+      "id": "fig2",
+      "page": 2,
+      "path": "assets/failed.png",
+      "caption": "Failed tasks by region: North, East, West. This table contains synthetic failure counts from the same sample; read the image for the values."
+    }
+  ],
+  "fixture_notice": "Image-only integration fixture. Numeric chart values are absent from structured text. Not a model benchmark or real operational measurement."
+}

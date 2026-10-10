@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="870" viewBox="0 0 1500 870"><rect width="100%" height="100%" fill="white"/>
+<rect x="335" y="40" width="1035" height="770" rx="0" fill="white" stroke="#222" stroke-width="3"/>
+<text x="850" y="87.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="32" fill="#111">多智能体文档问答系统</text>
+<ellipse cx="130.0" cy="298.0" rx="28.0" ry="28.0" fill="white" stroke="#222" stroke-width="3"/>
+<polyline points="130,326 130,418" fill="none" stroke="#222" stroke-width="3"/>
+<polyline points="80,355 180,355" fill="none" stroke="#222" stroke-width="3"/>
+<polyline points="130,418 86,472" fill="none" stroke="#222" stroke-width="3"/>
+<polyline points="130,418 174,472" fill="none" stroke="#222" stroke-width="3"/>
+<text x="130" y="518.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="28" fill="#111">使用者</text>
+<polyline points="180,370 450,235" fill="none" stroke="#222" stroke-width="3"/>
+<ellipse cx="825.0" cy="235.0" rx="375.0" ry="65.0" fill="white" stroke="#222" stroke-width="3"/>
+<text x="825.0" y="243.525" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="31" fill="#111">导入 PDF 文档</text>
+<polyline points="180,370 450,395" fill="none" stroke="#222" stroke-width="3"/>
+<ellipse cx="825.0" cy="395.0" rx="375.0" ry="65.0" fill="white" stroke="#222" stroke-width="3"/>
+<text x="825.0" y="403.525" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="31" fill="#111">提交问题与查看出处</text>
+<polyline points="180,370 450,555" fill="none" stroke="#222" stroke-width="3"/>
+<ellipse cx="825.0" cy="555.0" rx="375.0" ry="65.0" fill="white" stroke="#222" stroke-width="3"/>
+<text x="825.0" y="563.525" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="31" fill="#111">取消任务</text>
+<polyline points="180,370 450,715" fill="none" stroke="#222" stroke-width="3"/>
+<ellipse cx="825.0" cy="715.0" rx="375.0" ry="65.0" fill="white" stroke="#222" stroke-width="3"/>
+<text x="825.0" y="723.525" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="31" fill="#111">运行评测与查看日志</text>
+</svg>

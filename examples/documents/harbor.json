@@ -1,0 +1,55 @@
+{
+  "doc_id": "harbor",
+  "title": "港湾资料借阅系统方案",
+  "page_count": 3,
+  "sections": [
+    {
+      "id": "s1",
+      "title": "范围与服务",
+      "page": 1,
+      "text": "港湾资料借阅系统为资料室提供检索、借阅与归还管理。试点规模为2000名读者。服务时间为每日08:00至22:00。"
+    },
+    {
+      "id": "s2",
+      "title": "借阅规则",
+      "page": 2,
+      "text": "每名读者同时最多借阅3份资料。首次借阅期限为14天，允许续借1次，续借延长7天。资料存在其他读者预约时，不允许续借。"
+    },
+    {
+      "id": "s3",
+      "title": "权限与审计",
+      "page": 2,
+      "text": "系统包含读者和资料管理员两种角色。读者只能查询自己的借阅记录；资料管理员可以登记资料和处理归还。借阅操作审计日志保留180天。导出的统计结果不包含读者姓名。"
+    },
+    {
+      "id": "s4",
+      "title": "交付与恢复",
+      "page": 3,
+      "text": "试点建设周期为4周。验收要求借阅状态核对准确率不低于99%。出现服务故障后，应在15分钟内恢复服务。管理员在每日开馆前检查前一日备份状态。"
+    }
+  ],
+  "tables": [
+    {
+      "id": "t1",
+      "page": 2,
+      "text": "性能与运维目标表\n并发用户数 | 50\n查询响应时间上限 | 1.5秒\n每日备份开始时间 | 02:00",
+      "image_path": "assets/harbor-t1.png"
+    },
+    {
+      "id": "t2",
+      "page": 3,
+      "text": "设备预算表（人民币）\n应用服务器 | 12000元\n备份存储 | 4000元\n合计 | 16000元",
+      "image_path": "assets/harbor-t2.png"
+    }
+  ],
+  "images": [
+    {
+      "id": "fig1",
+      "page": 3,
+      "path": "assets/harbor-fig1.png",
+      "caption": "图1为虚构设计示意：检索、借阅、归还的目标响应时间依次为0.8秒、1.1秒、1.0秒。这些是方案目标值，不是实测结果。"
+    }
+  ],
+  "source_pdf": "harbor.pdf",
+  "fixture_notice": "Fictional manually structured specification; not a parser or model benchmark result."
+}

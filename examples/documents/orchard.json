@@ -1,0 +1,55 @@
+{
+  "doc_id": "orchard",
+  "title": "果园物资库存系统方案",
+  "page_count": 3,
+  "sections": [
+    {
+      "id": "s1",
+      "title": "范围与对象",
+      "page": 1,
+      "text": "果园物资库存系统用于管理生产物资的入库、领用和库存预警。试点覆盖2个仓库和600种物资。系统不处理销售订单和财务结算。"
+    },
+    {
+      "id": "s2",
+      "title": "领用与预警",
+      "page": 2,
+      "text": "物资领用必须先提交申请，再由仓库管理员审核。单次领用数量超过100件时，还须由主管复核。可用库存低于20件时触发补货提醒，提醒每6小时汇总一次。"
+    },
+    {
+      "id": "s3",
+      "title": "权限与留痕",
+      "page": 2,
+      "text": "申请人可以查看本人申请；仓库管理员负责库存登记；主管负责大额领用复核。库存调整必须记录调整原因。操作日志保留365天。主管不得复核自己提交的申请。"
+    },
+    {
+      "id": "s4",
+      "title": "实施与容灾",
+      "page": 3,
+      "text": "项目分为需求、开发和试运行三个阶段，总周期为6周。验收要求库存账实相符率不低于98%。故障恢复时间目标为30分钟，允许的数据丢失时间窗口为1小时。"
+    }
+  ],
+  "tables": [
+    {
+      "id": "t1",
+      "page": 2,
+      "text": "性能与备份目标表\n并发用户数 | 30\n入库保存响应时间上限 | 2秒\n完整备份频率 | 每日1次",
+      "image_path": "assets/orchard-t1.png"
+    },
+    {
+      "id": "t2",
+      "page": 3,
+      "text": "试点物资安全库存表\n包装箱 | 50件\n标签纸 | 80件\n防护手套 | 40件",
+      "image_path": "assets/orchard-t2.png"
+    }
+  ],
+  "images": [
+    {
+      "id": "fig1",
+      "page": 3,
+      "path": "assets/orchard-fig1.png",
+      "caption": "图1为虚构设计示意：入库、领用、查询的目标响应时间依次为1.6秒、1.8秒、0.9秒。这些是方案目标值，不是实测结果。"
+    }
+  ],
+  "source_pdf": "orchard.pdf",
+  "fixture_notice": "Fictional manually structured specification; not a parser or model benchmark result."
+}

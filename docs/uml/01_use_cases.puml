@@ -1,0 +1,16 @@
+@startuml
+skinparam monochrome true
+skinparam defaultFontName Microsoft YaHei
+left to right direction
+actor 使用者 as User
+rectangle 多智能体文档问答系统 {
+usecase "导入 PDF 文档" as Import
+usecase "提交问题与查看出处" as Ask
+usecase "取消任务" as Cancel
+usecase "运行评测与查看日志" as Eval
+}
+User -- Import
+User -- Ask
+User -- Cancel
+User -- Eval
+@enduml

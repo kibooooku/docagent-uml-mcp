@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1390" viewBox="0 0 1500 1390"><rect width="100%" height="100%" fill="white"/>
+<ellipse cx="750.0" cy="50.0" rx="30.0" ry="30.0" fill="white" stroke="#222" stroke-width="3"/>
+<rect x="495" y="120" width="510" height="120" rx="20" fill="white" stroke="#222" stroke-width="3"/>
+<text x="750.0" y="187.7" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="28" fill="#111">Actor 依据文档与记忆生成初答</text>
+<polyline points="750,80 750,120" fill="none" stroke="#222" stroke-width="3"/>
+<polygon points="750,120 744.5481432076789,107.10514608395961 755.4518567923211,107.10514608395961" fill="#222"/>
+<rect x="495" y="310" width="510" height="120" rx="20" fill="white" stroke="#222" stroke-width="3"/>
+<text x="750.0" y="377.7" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="28" fill="#111">Reviewer 补充取证与复核</text>
+<polyline points="750,240 750,310" fill="none" stroke="#222" stroke-width="3"/>
+<polygon points="750,310 744.5481432076789,297.1051460839596 755.4518567923211,297.1051460839596" fill="#222"/>
+<rect x="495" y="500" width="510" height="120" rx="20" fill="white" stroke="#222" stroke-width="3"/>
+<text x="750.0" y="567.7" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="28" fill="#111">EvidenceGate 校验引用来源</text>
+<polyline points="750,430 750,500" fill="none" stroke="#222" stroke-width="3"/>
+<polygon points="750,500 744.5481432076789,487.1051460839596 755.4518567923211,487.1051460839596" fill="#222"/>
+<polyline points="750,620 750,700" fill="none" stroke="#222" stroke-width="3"/>
+<polygon points="750,700 744.5481432076789,687.1051460839597 755.4518567923211,687.1051460839597" fill="#222"/>
+<polyline points="750,700.0 1050.0,775 750,850.0 450.0,775 750,700.0" fill="none" stroke="#222" stroke-width="3"/>
+<text x="750" y="780.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="27" fill="#111">需要修订且预算可用</text>
+<polyline points="1050,775 1310,775 1310,180 1005,180" fill="none" stroke="#222" stroke-width="3"/>
+<polygon points="1005,180 1017.8948539160403,174.5481432076789 1017.8948539160403,185.4518567923211" fill="#222"/>
+<text x="1180" y="744.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="26" fill="#111">是</text>
+<polyline points="750,850 750,900" fill="none" stroke="#222" stroke-width="3"/>
+<polygon points="750,900 744.5481432076789,887.1051460839597 755.4518567923211,887.1051460839597" fill="#222"/>
+<text x="803" y="880.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="26" fill="#111">否</text>
+<polyline points="750,900.0 975.0,965 750,1030.0 525.0,965 750,900.0" fill="none" stroke="#222" stroke-width="3"/>
+<text x="750" y="970.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="27" fill="#111">引用核验通过</text>
+<polyline points="750,1030 750,1110" fill="none" stroke="#222" stroke-width="3"/>
+<polygon points="750,1110 744.5481432076789,1097.1051460839597 755.4518567923211,1097.1051460839597" fill="#222"/>
+<text x="810" y="1082.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="26" fill="#111">是</text>
+<rect x="445" y="1110" width="610" height="140" rx="20" fill="white" stroke="#222" stroke-width="3"/>
+<text x="750.0" y="1167.4" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="28" fill="#111">有条件写入记忆并输出结果</text>
+<text x="750.0" y="1208.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="28" fill="#111">拒答结果不写记忆</text>
+<polyline points="750,1250 750,1300" fill="none" stroke="#222" stroke-width="3"/>
+<polygon points="750,1300 744.5481432076789,1287.1051460839597 755.4518567923211,1287.1051460839597" fill="#222"/>
+<ellipse cx="750.0" cy="1330.0" rx="30.0" ry="30.0" fill="white" stroke="#222" stroke-width="3"/>
+<polyline points="975,965 1285,965 1285,1180" fill="none" stroke="#222" stroke-width="3"/>
+<polygon points="1285,1180 1279.548143207679,1167.1051460839597 1290.451856792321,1167.1051460839597" fill="#222"/>
+<text x="1100" y="938.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="26" fill="#111">否</text>
+<rect x="1135" y="1180" width="315" height="120" rx="20" fill="white" stroke="#222" stroke-width="3"/>
+<text x="1292.5" y="1247.15" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="26" fill="#111">输出证据不足</text>
+<polyline points="1135,1240 1080,1240 1080,1330 780,1330" fill="none" stroke="#222" stroke-width="3"/>
+<polygon points="780,1330 792.8948539160403,1324.548143207679 792.8948539160403,1335.451856792321" fill="#222"/>
+<text x="215" y="560.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="28" fill="#111">贯穿全过程</text>
+<text x="215" y="600.6" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="28" fill="#111">工具白名单</text>
+<text x="215" y="641.2" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="28" fill="#111">调用预算</text>
+<text x="215" y="681.8" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="28" fill="#111">超时与重试</text>
+<text x="215" y="722.4" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="28" fill="#111">任务取消</text>
+</svg>

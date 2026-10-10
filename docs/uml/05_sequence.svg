@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1480" viewBox="0 0 1500 1480"><rect width="100%" height="100%" fill="white"/>
+<rect x="20" y="25" width="230" height="110" rx="0" fill="white" stroke="#222" stroke-width="3"/>
+<text x="135.0" y="67.85" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="27" fill="#111">Workflow</text>
+<text x="135.0" y="107.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="27" fill="#111">Engine</text>
+<polyline points="135,135 135,1450" fill="none" stroke="#222" stroke-width="3" stroke-dasharray="9 7"/>
+<rect x="320" y="25" width="230" height="110" rx="0" fill="white" stroke="#222" stroke-width="3"/>
+<text x="435.0" y="67.85" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="27" fill="#111">Actor /</text>
+<text x="435.0" y="107.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="27" fill="#111">Reviewer</text>
+<polyline points="435,135 435,1450" fill="none" stroke="#222" stroke-width="3" stroke-dasharray="9 7"/>
+<rect x="655" y="25" width="230" height="110" rx="0" fill="white" stroke="#222" stroke-width="3"/>
+<text x="770.0" y="67.85" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="27" fill="#111">MCP</text>
+<text x="770.0" y="107.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="27" fill="#111">Gateway</text>
+<polyline points="770,135 770,1450" fill="none" stroke="#222" stroke-width="3" stroke-dasharray="9 7"/>
+<rect x="965" y="25" width="230" height="110" rx="0" fill="white" stroke="#222" stroke-width="3"/>
+<text x="1080.0" y="67.85" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="27" fill="#111">MCP</text>
+<text x="1080.0" y="107.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="27" fill="#111">Server</text>
+<polyline points="1080,135 1080,1450" fill="none" stroke="#222" stroke-width="3" stroke-dasharray="9 7"/>
+<rect x="1255" y="25" width="230" height="110" rx="0" fill="white" stroke="#222" stroke-width="3"/>
+<text x="1370.0" y="67.85" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="27" fill="#111">Document</text>
+<text x="1370.0" y="107.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="27" fill="#111">Store</text>
+<polyline points="1370,135 1370,1450" fill="none" stroke="#222" stroke-width="3" stroke-dasharray="9 7"/>
+<polyline points="770,210 1080,210" fill="none" stroke="#222" stroke-width="3"/>
+<polygon points="1080,210 1067.1051460839597,215.4518567923211 1067.1051460839597,204.5481432076789" fill="#222"/>
+<text x="925.0" y="186.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="24" fill="#111">initialize  协商版本</text>
+<polyline points="1080,310 770,310" fill="none" stroke="#222" stroke-width="3"/>
+<polygon points="770,310 782.8948539160403,304.5481432076789 782.8948539160403,315.4518567923211" fill="#222"/>
+<text x="925.0" y="286.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="24" fill="#111">2025-06-18 / tools</text>
+<polyline points="770,410 1080,410" fill="none" stroke="#222" stroke-width="3"/>
+<polygon points="1080,410 1067.1051460839597,415.4518567923211 1067.1051460839597,404.5481432076789" fill="#222"/>
+<text x="925.0" y="386.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="24" fill="#111">notifications/initialized</text>
+<polyline points="770,510 1080,510" fill="none" stroke="#222" stroke-width="3"/>
+<polygon points="1080,510 1067.1051460839597,515.4518567923211 1067.1051460839597,504.5481432076789" fill="#222"/>
+<text x="925.0" y="486.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="24" fill="#111">tools/list</text>
+<polyline points="1080,610 770,610" fill="none" stroke="#222" stroke-width="3"/>
+<polygon points="770,610 782.8948539160403,604.5481432076789 782.8948539160403,615.4518567923211" fill="#222"/>
+<text x="925.0" y="586.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="24" fill="#111">工具与 inputSchema</text>
+<polyline points="135,710 435,710" fill="none" stroke="#222" stroke-width="3"/>
+<polygon points="435,710 422.1051460839596,715.4518567923211 422.1051460839596,704.5481432076789" fill="#222"/>
+<text x="285.0" y="686.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="24" fill="#111">调用智能体</text>
+<polyline points="435,810 770,810" fill="none" stroke="#222" stroke-width="3"/>
+<polygon points="770,810 757.1051460839597,815.4518567923211 757.1051460839597,804.5481432076789" fill="#222"/>
+<text x="602.5" y="786.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="24" fill="#111">call(name, args)</text>
+<polyline points="770,910 1080,910" fill="none" stroke="#222" stroke-width="3"/>
+<polygon points="1080,910 1067.1051460839597,915.4518567923211 1067.1051460839597,904.5481432076789" fill="#222"/>
+<text x="925.0" y="886.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="24" fill="#111">tools/call</text>
+<polyline points="1080,1010 1370,1010" fill="none" stroke="#222" stroke-width="3"/>
+<polygon points="1370,1010 1357.1051460839597,1015.4518567923211 1357.1051460839597,1004.5481432076789" fill="#222"/>
+<text x="1225.0" y="986.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="24" fill="#111">store.call(...)</text>
+<polyline points="1370,1110 1080,1110" fill="none" stroke="#222" stroke-width="3"/>
+<polygon points="1080,1110 1092.8948539160403,1104.548143207679 1092.8948539160403,1115.451856792321" fill="#222"/>
+<text x="1225.0" y="1086.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="24" fill="#111">证据 / 图像</text>
+<polyline points="1080,1210 770,1210" fill="none" stroke="#222" stroke-width="3"/>
+<polygon points="770,1210 782.8948539160403,1204.548143207679 782.8948539160403,1215.451856792321" fill="#222"/>
+<text x="925.0" y="1186.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="24" fill="#111">文本块与图像块</text>
+<polyline points="770,1310 435,1310" fill="none" stroke="#222" stroke-width="3"/>
+<polygon points="435,1310 447.8948539160404,1304.548143207679 447.8948539160404,1315.451856792321" fill="#222"/>
+<text x="602.5" y="1286.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="24" fill="#111">evidence + images</text>
+<polyline points="435,1410 135,1410" fill="none" stroke="#222" stroke-width="3"/>
+<polygon points="135,1410 147.8948539160404,1404.548143207679 147.8948539160404,1415.451856792321" fill="#222"/>
+<text x="285.0" y="1386.0" text-anchor="middle" font-family="Microsoft YaHei,SimHei,sans-serif" font-size="24" fill="#111">Answer / Review 事件</text>
+</svg>

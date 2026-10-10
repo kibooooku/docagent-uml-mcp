@@ -1,0 +1,19 @@
+@startuml
+skinparam monochrome true
+skinparam defaultFontName Microsoft YaHei
+package "本地应用进程" {
+[CLI] --> [WorkflowEngine]
+[WorkflowEngine] --> [EventBus]
+[WorkflowEngine] --> [TaskState]
+[WorkflowEngine] --> [Actor / Reviewer]
+[WorkflowEngine] --> [EvidenceGate]
+[WorkflowEngine] --> [MemoryStore]
+[Actor / Reviewer] --> [GuardedGateway]
+[EvidenceGate] --> [GuardedGateway]
+[GuardedGateway] --> [MCPGateway]
+}
+[Actor / Reviewer] --> [兼容模型服务] : HTTPS
+[MCPGateway] --> [MCP Server] : stdio / JSON-RPC
+[MCP Server] --> [DocumentStore]
+[DocumentStore] --> [JSON / PDF / 图像]
+@enduml

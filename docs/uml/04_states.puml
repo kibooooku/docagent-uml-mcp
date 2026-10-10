@@ -1,0 +1,20 @@
+@startuml
+skinparam monochrome true
+skinparam defaultFontName Microsoft YaHei
+[*] --> pending
+pending --> acting : task_submitted
+acting --> reviewing : actor_completed
+reviewing --> validating : review_completed
+validating --> acting : 修订允许且未超预算
+validating --> completed : 证据通过或有依据拒答
+acting --> failed : error
+reviewing --> failed : error
+validating --> failed : error
+pending --> cancelled : cancel
+acting --> cancelled : cancel
+reviewing --> cancelled : cancel
+validating --> cancelled : cancel
+completed --> [*]
+failed --> [*]
+cancelled --> [*]
+@enduml

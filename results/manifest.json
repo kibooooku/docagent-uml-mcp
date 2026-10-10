@@ -1,0 +1,25 @@
+{
+  "records": {
+    "java_listener.txt": "ca882fb320d538512b30cfbaa0ae1a363dbd101214d52c48a749ed16922ccf3a",
+    "live_evaluation.json": "4afeee4c4c17dda892066f3df5981290c5bf7e056b6b505d568e123fb728bf42",
+    "robustness.json": "551dc13b12df848c43fa3ac41144c1f0ec9573fa46f043262363e4a7736e8543",
+    "source_based_secondary_audit.json": "7346002f44c99642603c0a0a18c89f2620666c329cdac101bcf2a1bf76a9f14f",
+    "test_summary.json": "18c94128bc2af80b77c493917d41eae91b374e7c5e8ce0ecea6a3ee1482f5b78",
+    "vision_off.json": "ad23328511e6eb0d5e3db139171f16312aebdd422517be39478ad0e6981e8759",
+    "vision_on.json": "d7feb9a74a33c529802762abe43222b79f2ec7bee1e176df2324fe5dba349500"
+  },
+  "source_files": {
+    "src/docagent/__init__.py": "49084bb8db8ef7f7d5df426bdc1975802c790ff42870fb60e6656921120f1899",
+    "src/docagent/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "src/docagent/agents.py": "71a32be6e193615b1da3812d0b3f3f088462c941adf73ed2423f8fe22d113423",
+    "src/docagent/cli.py": "26950d19974963c97e6b655323158e5442370d9f37a7b360f5c5c16afff4f96b",
+    "src/docagent/core.py": "e0d9ce660698eacc0cca912b38331842ade0d50a8f4d35a9bd7ce4f1fe0bac5d",
+    "src/docagent/documents.py": "9fe176c703d1950105be68c63862b68379923f2ea5b65dd0bed4a8846af009be",
+    "src/docagent/evaluation.py": "fdc0a8a97c4f428b3928530e2d6e5e32eb3588589c31ced10e96b7bb6bc81fb6",
+    "src/docagent/gateway.py": "8a55606848e4286b84c07bd43093489726d31a4231866bf8666fa5a8714a600c",
+    "src/docagent/mcp_server.py": "9f919134371c51738456e5b99b707740f4f8d028600518b50da8ab0585f88c0a",
+    "src/docagent/robustness.py": "4afc985ce6df51e47a60715c4b459600da582e31b6851713faa9114e24bc6a5f"
+  },
+  "note": "Text experiment used vision=False. A later image-message ordering regression fix only affects vision=True; the separate vision experiments validate that path.",
+  "source_hash_representation": "Git blob bytes after line-ending normalization"
+}

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "docagent-uml-mcp"
+version = "1.0.0"
+description = "Evidence-governed multi-agent document QA with UML and real MCP tools"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+dependencies = ["mcp==1.12.4", "pydantic==2.11.7", "pydantic-settings==2.10.1", "httpx>=0.28,<0.29", "PyMuPDF>=1.26,<1.27"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9", "pytest-asyncio>=1,<2", "ruff>=0.12,<1"]
+
+[project.scripts]
+docagent = "docagent.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+

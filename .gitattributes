@@ -1,0 +1,9 @@
+* text=auto
+*.py text eol=lf
+*.puml text eol=lf
+*.sh text eol=lf
+# Preserve experimental record bytes so archived SHA-256 hashes remain verifiable.
+results/*.json -text
+results/*.txt -text
+*.png binary
+*.pdf binary

@@ -1,0 +1,1085 @@
+{
+  "audit_type": "AI-agent source-based secondary audit",
+  "not_human_review": true,
+  "method": "逐题对照三版最终答复与3份完整来源，核对数值、单位、条件、额外推断、缺漏、无依据断言；脚本仅保存代理核查结论并检查引用一致性。",
+  "scope_limitations": [
+    "非独立人工标注，不应称为human review或独立人工正确率。",
+    "检查最终答复，不代表评估全部中间草稿或图像视觉理解。",
+    "来源为小规模虚构方案；一次运行不能证明多智能体普遍效果或统计显著性。",
+    "未改动原始评测结果及既有规则评分；100%规则通过只说明关键术语、状态及预期证据覆盖。",
+    "附加断言存在问题不等于题目核心回答错误；本核查不据此重新命名或发布语义准确率。"
+  ],
+  "evaluation_sha256": "4afeee4c4c17dda892066f3df5981290c5bf7e056b6b505d568e123fb728bf42",
+  "source_sha256": {
+    "harbor.json": "f67cadd6e0fc15efb4805daa714c3c5aeb7a2c66089211c2507cf0db074b76d0",
+    "orchard.json": "dd278fe60f9de0c8c7b10afb7652e5c4911cb3d746be95b2078b82aa03b4a3fc",
+    "atlas.json": "184d3eb3d3912344a853adb040713478feccdd0869a5056dce011b657be59ccf"
+  },
+  "summary": {
+    "questions_reviewed": 30,
+    "final_answers_reviewed": 90,
+    "core_question_answer_defects_detected": 0,
+    "answers_with_added_claim_findings": 6,
+    "questions_with_findings": 3,
+    "findings_by_mode": {
+      "engineered": 3,
+      "baseline": 2,
+      "optimized": 1
+    },
+    "findings_by_type": {
+      "unsupported_deployment_inference": 1,
+      "unlicensed_converse_of_threshold_rule": 2,
+      "overbroad_absence_claim_contradicted_by_source": 3
+    },
+    "evidence_reference_or_text_mismatches": 0
+  },
+  "reference_errors": [],
+  "records": [
+    {
+      "id": "atlas-01",
+      "mode": "baseline",
+      "question": "星图系统的试点服务多少名志愿者？",
+      "final_answer": "星图志愿活动排班系统的试点服务300名志愿者。",
+      "status": "answered",
+      "source_based_check": "试点300名志愿者。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "atlas-01",
+      "mode": "engineered",
+      "question": "星图系统的试点服务多少名志愿者？",
+      "final_answer": "星图系统的试点服务300名志愿者。",
+      "status": "answered",
+      "source_based_check": "试点300名志愿者。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "atlas-01",
+      "mode": "optimized",
+      "question": "星图系统的试点服务多少名志愿者？",
+      "final_answer": "星图志愿活动排班系统的试点服务300名志愿者。",
+      "status": "answered",
+      "source_based_check": "试点300名志愿者。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "atlas-02",
+      "mode": "baseline",
+      "question": "星图系统每名志愿者每周最多参加几个班次？",
+      "final_answer": "每名志愿者每周最多参加3个班次。",
+      "status": "answered",
+      "source_based_check": "每名志愿者每周最多3个班次，时间范围正确。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "atlas-02",
+      "mode": "engineered",
+      "question": "星图系统每名志愿者每周最多参加几个班次？",
+      "final_answer": "每名志愿者每周最多参加3个班次。",
+      "status": "answered",
+      "source_based_check": "每名志愿者每周最多3个班次，时间范围正确。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "atlas-02",
+      "mode": "optimized",
+      "question": "星图系统每名志愿者每周最多参加几个班次？",
+      "final_answer": "每名志愿者每周最多参加3个班次。",
+      "status": "answered",
+      "source_based_check": "每名志愿者每周最多3个班次，时间范围正确。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "atlas-03",
+      "mode": "baseline",
+      "question": "星图系统报名在活动开始前多久截止？",
+      "final_answer": "星图系统报名在活动开始前24小时截止（退出申请则在活动开始前12小时截止）。",
+      "status": "answered",
+      "source_based_check": "报名截止前24小时；附述退出截止前12小时也有来源，未混淆。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "atlas-03",
+      "mode": "engineered",
+      "question": "星图系统报名在活动开始前多久截止？",
+      "final_answer": "报名在活动开始前24小时截止（退出申请则在活动开始前12小时截止）。",
+      "status": "answered",
+      "source_based_check": "报名截止前24小时；附述退出截止前12小时也有来源，未混淆。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "atlas-03",
+      "mode": "optimized",
+      "question": "星图系统报名在活动开始前多久截止？",
+      "final_answer": "星图系统报名在活动开始前24小时截止（退出申请则在活动开始前12小时截止）。",
+      "status": "answered",
+      "source_based_check": "报名截止前24小时；附述退出截止前12小时也有来源，未混淆。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "atlas-04",
+      "mode": "baseline",
+      "question": "星图系统的公开排班表显示什么，是否显示联系电话？",
+      "final_answer": "公开排班表仅显示志愿者编号，不显示联系电话。文档在“角色与隐私”一节明确说明：志愿者可维护自己的可用时段，活动组织者审核报名并生成排班；公开排班表仅显示志愿者编号，不显示联系电话；排班修改记录保留90天。",
+      "status": "answered",
+      "source_based_check": "仅显示编号、不显示联系电话；附述角色权限和90天留痕有来源。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "atlas-04",
+      "mode": "engineered",
+      "question": "星图系统的公开排班表显示什么，是否显示联系电话？",
+      "final_answer": "公开排班表仅显示志愿者编号，不显示联系电话。",
+      "status": "answered",
+      "source_based_check": "仅显示编号、不显示联系电话；附述角色权限和90天留痕有来源。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "atlas-04",
+      "mode": "optimized",
+      "question": "星图系统的公开排班表显示什么，是否显示联系电话？",
+      "final_answer": "公开排班表仅显示志愿者编号，不显示联系电话。文档在“角色与隐私”一节明确说明：志愿者可维护自己的可用时段，活动组织者审核报名并生成排班；公开排班表仅显示志愿者编号，不显示联系电话；排班修改记录保留90天。",
+      "status": "answered",
+      "source_based_check": "仅显示编号、不显示联系电话；附述角色权限和90天留痕有来源。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "atlas-05",
+      "mode": "baseline",
+      "question": "星图系统每场活动报名人数上限是多少？",
+      "final_answer": "每场活动报名人数上限为60人。",
+      "status": "answered",
+      "source_based_check": "每场活动60人上限，未与80并发或300试点混用。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "atlas-05",
+      "mode": "engineered",
+      "question": "星图系统每场活动报名人数上限是多少？",
+      "final_answer": "每场活动报名人数上限为60人（见性能与容量目标表）。",
+      "status": "answered",
+      "source_based_check": "每场活动60人上限，未与80并发或300试点混用。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "atlas-05",
+      "mode": "optimized",
+      "question": "星图系统每场活动报名人数上限是多少？",
+      "final_answer": "每场活动报名人数上限为60人。",
+      "status": "answered",
+      "source_based_check": "每场活动60人上限，未与80并发或300试点混用。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "atlas-06",
+      "mode": "baseline",
+      "question": "星图系统示例活动的岗位需求合计多少人？",
+      "final_answer": "星图系统示例活动的岗位需求合计15人（签到引导4人、场地维护6人、物资发放5人，4+6+5=15，与表中合计一致）。",
+      "status": "answered",
+      "source_based_check": "4+6+5=15人，岗位分项与合计一致。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "atlas-06",
+      "mode": "engineered",
+      "question": "星图系统示例活动的岗位需求合计多少人？",
+      "final_answer": "星图系统示例活动的岗位需求合计15人（签到引导4人、场地维护6人、物资发放5人，4+6+5=15，与表中合计一致）。",
+      "status": "answered",
+      "source_based_check": "4+6+5=15人，岗位分项与合计一致。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "atlas-06",
+      "mode": "optimized",
+      "question": "星图系统示例活动的岗位需求合计多少人？",
+      "final_answer": "星图系统示例活动的岗位需求合计15人（签到引导4人、场地维护6人、物资发放5人，4+6+5=15，与表中合计一致）。",
+      "status": "answered",
+      "source_based_check": "4+6+5=15人，岗位分项与合计一致。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "atlas-07",
+      "mode": "baseline",
+      "question": "星图系统单个班次时长是多少，排班确认后多久发送通知？",
+      "final_answer": "单个班次时长为2小时；排班确认后，系统在10分钟内发送站内通知。",
+      "status": "answered",
+      "source_based_check": "班次2小时、确认后10分钟内站内通知，双来源和单位均正确。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "atlas-07",
+      "mode": "engineered",
+      "question": "星图系统单个班次时长是多少，排班确认后多久发送通知？",
+      "final_answer": "单个班次时长为2小时；排班确认后，系统在10分钟内发送站内通知。",
+      "status": "answered",
+      "source_based_check": "班次2小时、确认后10分钟内站内通知，双来源和单位均正确。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "atlas-07",
+      "mode": "optimized",
+      "question": "星图系统单个班次时长是多少，排班确认后多久发送通知？",
+      "final_answer": "单个班次时长为2小时；排班确认后，系统在10分钟内发送站内通知。",
+      "status": "answered",
+      "source_based_check": "班次2小时、确认后10分钟内站内通知，双来源和单位均正确。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "atlas-08",
+      "mode": "baseline",
+      "question": "星图系统排班修改记录保留多久，项目建设周期为几周？",
+      "final_answer": "排班修改记录保留90天；项目建设周期为5周。",
+      "status": "answered",
+      "source_based_check": "修改记录90天、建设5周，双来源和单位均正确。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "atlas-08",
+      "mode": "engineered",
+      "question": "星图系统排班修改记录保留多久，项目建设周期为几周？",
+      "final_answer": "排班修改记录保留90天；项目建设周期为5周。",
+      "status": "answered",
+      "source_based_check": "修改记录90天、建设5周，双来源和单位均正确。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "atlas-08",
+      "mode": "optimized",
+      "question": "星图系统排班修改记录保留多久，项目建设周期为几周？",
+      "final_answer": "排班修改记录保留90天；项目建设周期为5周。",
+      "status": "answered",
+      "source_based_check": "修改记录90天、建设5周，双来源和单位均正确。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "atlas-09",
+      "mode": "baseline",
+      "question": "星图系统短信供应商叫什么？",
+      "final_answer": "文档中未提及任何短信供应商信息。交付与通知部分仅说明系统在排班确认后10分钟内发送站内通知，未涉及短信渠道或供应商名称。",
+      "status": "insufficient",
+      "source_based_check": "文档只有站内通知，未提供短信供应商，拒答正确。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "atlas-09",
+      "mode": "engineered",
+      "question": "星图系统短信供应商叫什么？",
+      "final_answer": "文档未提及任何短信供应商。文档仅说明通知方式为站内通知（排班确认后10分钟内发送站内通知），未涉及短信或短信供应商信息。",
+      "status": "insufficient",
+      "source_based_check": "文档只有站内通知，未提供短信供应商，拒答正确。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "atlas-09",
+      "mode": "optimized",
+      "question": "星图系统短信供应商叫什么？",
+      "final_answer": "文档未提及任何短信供应商。交付与通知部分仅说明“排班确认后，系统在10分钟内发送站内通知”，未涉及短信渠道或供应商名称。",
+      "status": "insufficient",
+      "source_based_check": "文档只有站内通知，未提供短信供应商，拒答正确。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "atlas-10",
+      "mode": "baseline",
+      "question": "星图系统的年度运维费用是多少？",
+      "final_answer": "文档中未提及星图系统的年度运维费用。全文（目标与规模、报名与排班、角色与隐私、交付与通知）及两张表格（性能与容量目标表、示例活动岗位需求表）均无费用、运维、成本或预算相关信息，无法给出该数值。",
+      "status": "insufficient",
+      "source_based_check": "年度运维费用确实未提供，拒答正确；但三版扩大为全文无任何费用信息，与s1否认报名费和交通报销的内容不符。",
+      "core_question_answer_supported": true,
+      "finding": {
+        "type": "overbroad_absence_claim_contradicted_by_source",
+        "severity": "minor_added_claim",
+        "answer_excerpt": "均无费用、运维、成本或预算相关信息",
+        "source_ids": [
+          "atlas:text:s1"
+        ],
+        "explanation": "s1明确写系统不收取报名费，也不处理交通报销，因此不能说全文完全没有费用相关信息。年度运维金额确实未给出，核心拒答结论正确。",
+        "suggested_wording": "文档虽说明不收报名费、不处理交通报销，但未列年度运维预算或金额，因此无法回答。"
+      },
+      "disposition": "core_supported_with_added_claim_issue"
+    },
+    {
+      "id": "atlas-10",
+      "mode": "engineered",
+      "question": "星图系统的年度运维费用是多少？",
+      "final_answer": "文档中未提及星图系统的年度运维费用。该方案文档仅包含目标与规模、报名与排班、角色与隐私、交付与通知等章节，以及性能与容量目标表（并发用户数80、报名提交响应时间上限1秒、每场活动报名人数上限60人）和示例活动岗位需求表（合计15人），全文没有任何关于费用、成本或预算的信息。",
+      "status": "insufficient",
+      "source_based_check": "年度运维费用确实未提供，拒答正确；但三版扩大为全文无任何费用信息，与s1否认报名费和交通报销的内容不符。",
+      "core_question_answer_supported": true,
+      "finding": {
+        "type": "overbroad_absence_claim_contradicted_by_source",
+        "severity": "minor_added_claim",
+        "answer_excerpt": "全文没有任何关于费用、成本或预算的信息",
+        "source_ids": [
+          "atlas:text:s1"
+        ],
+        "explanation": "s1明确写系统不收取报名费，也不处理交通报销，因此不能说全文完全没有费用相关信息。年度运维金额确实未给出，核心拒答结论正确。",
+        "suggested_wording": "文档虽说明不收报名费、不处理交通报销，但未列年度运维预算或金额，因此无法回答。"
+      },
+      "disposition": "core_supported_with_added_claim_issue"
+    },
+    {
+      "id": "atlas-10",
+      "mode": "optimized",
+      "question": "星图系统的年度运维费用是多少？",
+      "final_answer": "文档中未提及星图系统的年度运维费用。该方案文档仅包含目标与规模、报名与排班、角色与隐私、交付与通知等内容，以及性能容量目标表和岗位需求表，全文没有关于费用、运维、成本或预算的任何信息。",
+      "status": "insufficient",
+      "source_based_check": "年度运维费用确实未提供，拒答正确；但三版扩大为全文无任何费用信息，与s1否认报名费和交通报销的内容不符。",
+      "core_question_answer_supported": true,
+      "finding": {
+        "type": "overbroad_absence_claim_contradicted_by_source",
+        "severity": "minor_added_claim",
+        "answer_excerpt": "全文没有关于费用、运维、成本或预算的任何信息",
+        "source_ids": [
+          "atlas:text:s1"
+        ],
+        "explanation": "s1明确写系统不收取报名费，也不处理交通报销，因此不能说全文完全没有费用相关信息。年度运维金额确实未给出，核心拒答结论正确。",
+        "suggested_wording": "文档虽说明不收报名费、不处理交通报销，但未列年度运维预算或金额，因此无法回答。"
+      },
+      "disposition": "core_supported_with_added_claim_issue"
+    },
+    {
+      "id": "harbor-01",
+      "mode": "baseline",
+      "question": "港湾系统的试点规模为多少名读者？",
+      "final_answer": "港湾系统的试点规模为2000名读者。",
+      "status": "answered",
+      "source_based_check": "规模为2000名读者，数值与单位正确。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-01",
+      "mode": "engineered",
+      "question": "港湾系统的试点规模为多少名读者？",
+      "final_answer": "港湾系统的试点规模为2000名读者。",
+      "status": "answered",
+      "source_based_check": "规模为2000名读者，数值与单位正确。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-01",
+      "mode": "optimized",
+      "question": "港湾系统的试点规模为多少名读者？",
+      "final_answer": "港湾系统的试点规模为2000名读者。",
+      "status": "answered",
+      "source_based_check": "规模为2000名读者，数值与单位正确。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-02",
+      "mode": "baseline",
+      "question": "港湾系统每日服务时间是什么？",
+      "final_answer": "港湾系统的服务时间为每日08:00至22:00。",
+      "status": "answered",
+      "source_based_check": "每日08:00至22:00，起止时间均正确。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-02",
+      "mode": "engineered",
+      "question": "港湾系统每日服务时间是什么？",
+      "final_answer": "港湾系统的服务时间为每日08:00至22:00。",
+      "status": "answered",
+      "source_based_check": "每日08:00至22:00，起止时间均正确。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-02",
+      "mode": "optimized",
+      "question": "港湾系统每日服务时间是什么？",
+      "final_answer": "港湾系统的服务时间为每日08:00至22:00。",
+      "status": "answered",
+      "source_based_check": "每日08:00至22:00，起止时间均正确。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-03",
+      "mode": "baseline",
+      "question": "港湾系统最多允许同时借阅多少份资料？",
+      "final_answer": "文档未规定系统整体的同时借阅上限，只规定了每名读者的上限：每名读者同时最多借阅3份资料。",
+      "status": "answered",
+      "source_based_check": "限制对象是每名读者，同时最多3份；基线额外澄清不是全系统总量，未发现错误。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-03",
+      "mode": "engineered",
+      "question": "港湾系统最多允许同时借阅多少份资料？",
+      "final_answer": "每名读者同时最多借阅3份资料。",
+      "status": "answered",
+      "source_based_check": "限制对象是每名读者，同时最多3份；基线额外澄清不是全系统总量，未发现错误。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-03",
+      "mode": "optimized",
+      "question": "港湾系统最多允许同时借阅多少份资料？",
+      "final_answer": "每名读者同时最多借阅3份资料。",
+      "status": "answered",
+      "source_based_check": "限制对象是每名读者，同时最多3份；基线额外澄清不是全系统总量，未发现错误。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-04",
+      "mode": "baseline",
+      "question": "港湾系统的借阅审计日志保留多久？",
+      "final_answer": "借阅操作审计日志保留180天。",
+      "status": "answered",
+      "source_based_check": "借阅操作审计日志保留180天。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-04",
+      "mode": "engineered",
+      "question": "港湾系统的借阅审计日志保留多久？",
+      "final_answer": "借阅操作审计日志保留180天。",
+      "status": "answered",
+      "source_based_check": "借阅操作审计日志保留180天。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-04",
+      "mode": "optimized",
+      "question": "港湾系统的借阅审计日志保留多久？",
+      "final_answer": "借阅操作审计日志保留180天。",
+      "status": "answered",
+      "source_based_check": "借阅操作审计日志保留180天。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-05",
+      "mode": "baseline",
+      "question": "港湾系统的查询响应时间上限是多少？",
+      "final_answer": "港湾系统的查询响应时间上限为1.5秒（见性能与运维目标表）。注意：图1中给出的检索目标响应时间0.8秒是方案目标值（非实测结果），与表中“查询响应时间上限1.5秒”是不同口径的指标。",
+      "status": "answered",
+      "source_based_check": "表格上限1.5秒；图注另列0.8秒设计目标，回答正确区分且未称实测。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-05",
+      "mode": "engineered",
+      "question": "港湾系统的查询响应时间上限是多少？",
+      "final_answer": "港湾系统的查询响应时间上限为1.5秒（见性能与运维目标表）。注意区分：图1中给出的检索目标响应时间为0.8秒，那是方案目标值而非上限，也不是实测结果。",
+      "status": "answered",
+      "source_based_check": "表格上限1.5秒；图注另列0.8秒设计目标，回答正确区分且未称实测。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-05",
+      "mode": "optimized",
+      "question": "港湾系统的查询响应时间上限是多少？",
+      "final_answer": "港湾系统的查询响应时间上限为1.5秒（见性能与运维目标表）。注意：图1中给出的检索目标响应时间0.8秒是方案目标值，并非上限，也不是实测结果。",
+      "status": "answered",
+      "source_based_check": "表格上限1.5秒；图注另列0.8秒设计目标，回答正确区分且未称实测。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-06",
+      "mode": "baseline",
+      "question": "港湾系统的设备总预算是多少？",
+      "final_answer": "设备总预算为16000元人民币（应用服务器12000元 + 备份存储4000元，合计16000元）。",
+      "status": "answered",
+      "source_based_check": "人民币12000+4000=16000元，分项与合计均正确。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-06",
+      "mode": "engineered",
+      "question": "港湾系统的设备总预算是多少？",
+      "final_answer": "设备总预算为16000元人民币（应用服务器12000元 + 备份存储4000元，合计16000元）。",
+      "status": "answered",
+      "source_based_check": "人民币12000+4000=16000元，分项与合计均正确。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-06",
+      "mode": "optimized",
+      "question": "港湾系统的设备总预算是多少？",
+      "final_answer": "设备总预算为16000元人民币（应用服务器12000元 + 备份存储4000元，合计16000元）。",
+      "status": "answered",
+      "source_based_check": "人民币12000+4000=16000元，分项与合计均正确。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-07",
+      "mode": "baseline",
+      "question": "港湾系统首次借阅期限和试点建设周期分别是多少？",
+      "final_answer": "首次借阅期限为14天（允许续借1次，续借延长7天）；试点建设周期为4周。",
+      "status": "answered",
+      "source_based_check": "首次14天与建设4周匹配；附述续借1次延长7天也有来源。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-07",
+      "mode": "engineered",
+      "question": "港湾系统首次借阅期限和试点建设周期分别是多少？",
+      "final_answer": "首次借阅期限为14天（允许续借1次，续借延长7天）；试点建设周期为4周。",
+      "status": "answered",
+      "source_based_check": "首次14天与建设4周匹配；附述续借1次延长7天也有来源。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-07",
+      "mode": "optimized",
+      "question": "港湾系统首次借阅期限和试点建设周期分别是多少？",
+      "final_answer": "首次借阅期限为14天（允许续借1次，续借延长7天）；试点建设周期为4周。",
+      "status": "answered",
+      "source_based_check": "首次14天与建设4周匹配；附述续借1次延长7天也有来源。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-08",
+      "mode": "baseline",
+      "question": "港湾系统每天何时开始备份，谁负责开馆前检查备份状态？",
+      "final_answer": "每日备份开始时间为02:00（见性能与运维目标表）；由管理员在每日开馆前检查前一日备份状态。",
+      "status": "answered",
+      "source_based_check": "02:00开始备份，由管理员在开馆前检查前一日备份；双来源覆盖。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-08",
+      "mode": "engineered",
+      "question": "港湾系统每天何时开始备份，谁负责开馆前检查备份状态？",
+      "final_answer": "每日备份开始时间为02:00（见性能与运维目标表）；由管理员在每日开馆前检查前一日备份状态。",
+      "status": "answered",
+      "source_based_check": "02:00开始备份，由管理员在开馆前检查前一日备份；双来源覆盖。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-08",
+      "mode": "optimized",
+      "question": "港湾系统每天何时开始备份，谁负责开馆前检查备份状态？",
+      "final_answer": "每日备份开始时间为02:00（见性能与运维目标表）；由管理员在每日开馆前检查前一日备份状态。",
+      "status": "answered",
+      "source_based_check": "02:00开始备份，由管理员在开馆前检查前一日备份；双来源覆盖。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-09",
+      "mode": "baseline",
+      "question": "港湾系统采用哪一家云服务商？",
+      "final_answer": "文档未提及任何云服务商。全文（范围与服务、借阅规则、权限与审计、交付与恢复及两张表格）均未出现云服务商信息，仅列出应用服务器与备份存储等设备预算，因此无法确定港湾系统采用哪一家云服务商。",
+      "status": "insufficient",
+      "source_based_check": "云服务商未披露，拒答正确；工程版附加自建判断缺乏来源。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-09",
+      "mode": "engineered",
+      "question": "港湾系统采用哪一家云服务商？",
+      "final_answer": "文档未提及任何云服务商。全文（范围与服务、借阅规则、权限与审计、交付与恢复）及两张表格（性能与运维目标表、设备预算表）均未出现云服务商信息；设备预算表仅列出应用服务器12000元与备份存储4000元，属于自建设备预算，未涉及云服务采购。因此无法回答该系统采用哪一家云服务商。",
+      "status": "insufficient",
+      "source_based_check": "云服务商未披露，拒答正确；工程版附加自建判断缺乏来源。",
+      "core_question_answer_supported": true,
+      "finding": {
+        "type": "unsupported_deployment_inference",
+        "severity": "minor_added_claim",
+        "answer_excerpt": "属于自建设备预算，未涉及云服务采购",
+        "source_ids": [
+          "harbor:table:t2"
+        ],
+        "explanation": "原表只有应用服务器、备份存储和金额。它未声明自建部署或采购方式，不能由设备名称推出部署方式。供应商未知的拒答仍正确。",
+        "suggested_wording": "设备预算表只列服务器与备份存储，文档未指明云服务商或部署方式。"
+      },
+      "disposition": "core_supported_with_added_claim_issue"
+    },
+    {
+      "id": "harbor-09",
+      "mode": "optimized",
+      "question": "港湾系统采用哪一家云服务商？",
+      "final_answer": "文档未提及任何云服务商。全文（范围与服务、借阅规则、权限与审计、交付与恢复及两张表格）均未出现云服务商信息，仅提到应用服务器与备份存储等设备预算，因此无法回答该问题。",
+      "status": "insufficient",
+      "source_based_check": "云服务商未披露，拒答正确；工程版附加自建判断缺乏来源。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-10",
+      "mode": "baseline",
+      "question": "港湾系统项目负责人的手机号码是多少？",
+      "final_answer": "文档中未包含任何项目负责人的手机号码或联系方式信息。",
+      "status": "insufficient",
+      "source_based_check": "来源未提供负责人电话号码，三版均拒答，没有虚构号码。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-10",
+      "mode": "engineered",
+      "question": "港湾系统项目负责人的手机号码是多少？",
+      "final_answer": "文档中未包含任何项目负责人的手机号码或联系方式信息。文档为《港湾资料借阅系统方案》，仅涵盖范围与服务、借阅规则、权限与审计、交付与恢复等内容，未提及负责人或联系电话。",
+      "status": "insufficient",
+      "source_based_check": "来源未提供负责人电话号码，三版均拒答，没有虚构号码。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "harbor-10",
+      "mode": "optimized",
+      "question": "港湾系统项目负责人的手机号码是多少？",
+      "final_answer": "文档中未包含任何项目负责人的手机号码或联系方式信息。",
+      "status": "insufficient",
+      "source_based_check": "来源未提供负责人电话号码，三版均拒答，没有虚构号码。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-01",
+      "mode": "baseline",
+      "question": "果园系统试点覆盖多少个仓库？",
+      "final_answer": "试点覆盖2个仓库（同时覆盖600种物资）。",
+      "status": "answered",
+      "source_based_check": "2个仓库，附带600种物资也有来源。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-01",
+      "mode": "engineered",
+      "question": "果园系统试点覆盖多少个仓库？",
+      "final_answer": "试点覆盖2个仓库（同时覆盖600种物资）。",
+      "status": "answered",
+      "source_based_check": "2个仓库，附带600种物资也有来源。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-01",
+      "mode": "optimized",
+      "question": "果园系统试点覆盖多少个仓库？",
+      "final_answer": "试点覆盖2个仓库（同时覆盖600种物资）。",
+      "status": "answered",
+      "source_based_check": "2个仓库，附带600种物资也有来源。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-02",
+      "mode": "baseline",
+      "question": "果园系统是否处理销售订单和财务结算？",
+      "final_answer": "否。文档明确说明：果园物资库存系统用于管理生产物资的入库、领用和库存预警，系统不处理销售订单和财务结算。",
+      "status": "answered",
+      "source_based_check": "不处理销售订单与财务结算，否定范围正确。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-02",
+      "mode": "engineered",
+      "question": "果园系统是否处理销售订单和财务结算？",
+      "final_answer": "否。文档明确说明：果园物资库存系统用于管理生产物资的入库、领用和库存预警，系统不处理销售订单和财务结算。",
+      "status": "answered",
+      "source_based_check": "不处理销售订单与财务结算，否定范围正确。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-02",
+      "mode": "optimized",
+      "question": "果园系统是否处理销售订单和财务结算？",
+      "final_answer": "否。文档明确说明：果园物资库存系统用于管理生产物资的入库、领用和库存预警，系统不处理销售订单和财务结算。",
+      "status": "answered",
+      "source_based_check": "不处理销售订单与财务结算，否定范围正确。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-03",
+      "mode": "baseline",
+      "question": "果园系统单次领用超过多少件时需要主管复核？",
+      "final_answer": "单次领用数量超过100件时，须由主管复核（即超过100件，100件及以下无需主管复核）。",
+      "status": "answered",
+      "source_based_check": "明确条件为单次超过100件；基线与工程版反推100件及以下无需主管复核，超出明示规则。",
+      "core_question_answer_supported": true,
+      "finding": {
+        "type": "unlicensed_converse_of_threshold_rule",
+        "severity": "minor_added_claim",
+        "answer_excerpt": "100件及以下无需主管复核",
+        "source_ids": [
+          "orchard:text:s2",
+          "orchard:text:s3"
+        ],
+        "explanation": "原文规定超过100件还须主管复核，并未把该条件明示为唯一条件。反推100件及以下一概无需复核属于超出来源的表述。题目所问阈值100件仍正确。",
+        "suggested_wording": "单次领用数量超过100件时，还须由主管复核。"
+      },
+      "disposition": "core_supported_with_added_claim_issue"
+    },
+    {
+      "id": "orchard-03",
+      "mode": "engineered",
+      "question": "果园系统单次领用超过多少件时需要主管复核？",
+      "final_answer": "单次领用数量超过100件时，须由主管复核（即超过100件为复核门槛，100件及以下无需主管复核）。",
+      "status": "answered",
+      "source_based_check": "明确条件为单次超过100件；基线与工程版反推100件及以下无需主管复核，超出明示规则。",
+      "core_question_answer_supported": true,
+      "finding": {
+        "type": "unlicensed_converse_of_threshold_rule",
+        "severity": "minor_added_claim",
+        "answer_excerpt": "100件及以下无需主管复核",
+        "source_ids": [
+          "orchard:text:s2",
+          "orchard:text:s3"
+        ],
+        "explanation": "原文只给出超过100件必须复核的条件，没有明确充分必要或排他关系；附加的反向结论超出来源。",
+        "suggested_wording": "单次领用数量超过100件时，还须由主管复核。"
+      },
+      "disposition": "core_supported_with_added_claim_issue"
+    },
+    {
+      "id": "orchard-03",
+      "mode": "optimized",
+      "question": "果园系统单次领用超过多少件时需要主管复核？",
+      "final_answer": "单次领用数量超过100件时，须由主管复核（即超过100件为触发条件）。",
+      "status": "answered",
+      "source_based_check": "明确条件为单次超过100件；基线与工程版反推100件及以下无需主管复核，超出明示规则。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-04",
+      "mode": "baseline",
+      "question": "果园系统的操作日志保留多久？",
+      "final_answer": "操作日志保留365天。",
+      "status": "answered",
+      "source_based_check": "操作日志365天。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-04",
+      "mode": "engineered",
+      "question": "果园系统的操作日志保留多久？",
+      "final_answer": "操作日志保留365天。",
+      "status": "answered",
+      "source_based_check": "操作日志365天。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-04",
+      "mode": "optimized",
+      "question": "果园系统的操作日志保留多久？",
+      "final_answer": "操作日志保留365天。",
+      "status": "answered",
+      "source_based_check": "操作日志365天。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-05",
+      "mode": "baseline",
+      "question": "果园系统入库保存响应时间上限是多少？",
+      "final_answer": "入库保存响应时间上限为2秒（见性能与备份目标表）。注意：图1中提到的入库目标响应时间1.6秒是方案目标值/设计示意，并非上限，也不是实测结果。",
+      "status": "answered",
+      "source_based_check": "表格上限2秒，图注1.6秒为设计目标；两者区分正确。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-05",
+      "mode": "engineered",
+      "question": "果园系统入库保存响应时间上限是多少？",
+      "final_answer": "果园系统入库保存响应时间上限为2秒（见性能与备份目标表）。注意区分：图1给出的入库目标响应时间为1.6秒，属于方案目标值而非上限，也不是实测结果。",
+      "status": "answered",
+      "source_based_check": "表格上限2秒，图注1.6秒为设计目标；两者区分正确。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-05",
+      "mode": "optimized",
+      "question": "果园系统入库保存响应时间上限是多少？",
+      "final_answer": "入库保存响应时间上限为2秒（见性能与备份目标表）。注意区分：图1给出的入库目标响应时间为1.6秒，属于方案目标值而非上限，也不是实测结果。",
+      "status": "answered",
+      "source_based_check": "表格上限2秒，图注1.6秒为设计目标；两者区分正确。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-06",
+      "mode": "baseline",
+      "question": "果园系统标签纸的安全库存是多少？",
+      "final_answer": "标签纸的安全库存为80件（见“试点物资安全库存表”）。",
+      "status": "answered",
+      "source_based_check": "标签纸安全库存80件，未混用一般预警阈值20件。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-06",
+      "mode": "engineered",
+      "question": "果园系统标签纸的安全库存是多少？",
+      "final_answer": "标签纸的安全库存为80件（见“试点物资安全库存表”）。",
+      "status": "answered",
+      "source_based_check": "标签纸安全库存80件，未混用一般预警阈值20件。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-06",
+      "mode": "optimized",
+      "question": "果园系统标签纸的安全库存是多少？",
+      "final_answer": "标签纸的安全库存为80件（见“试点物资安全库存表”）。",
+      "status": "answered",
+      "source_based_check": "标签纸安全库存80件，未混用一般预警阈值20件。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-07",
+      "mode": "baseline",
+      "question": "果园系统库存提醒多久汇总一次，故障恢复时间目标是多少？",
+      "final_answer": "库存提醒每6小时汇总一次（可用库存低于20件时触发补货提醒）；故障恢复时间目标为30分钟（允许的数据丢失时间窗口为1小时）。",
+      "status": "answered",
+      "source_based_check": "6小时汇总与30分钟恢复；附带低于20件与丢失窗口1小时都有来源。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-07",
+      "mode": "engineered",
+      "question": "果园系统库存提醒多久汇总一次，故障恢复时间目标是多少？",
+      "final_answer": "库存提醒每6小时汇总一次（可用库存低于20件时触发补货提醒）；故障恢复时间目标（RTO）为30分钟，允许的数据丢失时间窗口为1小时。",
+      "status": "answered",
+      "source_based_check": "6小时汇总与30分钟恢复；附带低于20件与丢失窗口1小时都有来源。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-07",
+      "mode": "optimized",
+      "question": "果园系统库存提醒多久汇总一次，故障恢复时间目标是多少？",
+      "final_answer": "库存提醒每6小时汇总一次（可用库存低于20件时触发补货提醒）；故障恢复时间目标为30分钟（允许的数据丢失时间窗口为1小时）。",
+      "status": "answered",
+      "source_based_check": "6小时汇总与30分钟恢复；附带低于20件与丢失窗口1小时都有来源。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-08",
+      "mode": "baseline",
+      "question": "果园系统需要主管复核的数量条件是什么，主管能否复核自己的申请？",
+      "final_answer": "数量条件：单次领用数量超过100件时，除仓库管理员审核外，还须由主管复核。主管不能复核自己提交的申请（文档明确规定“主管不得复核自己提交的申请”）。",
+      "status": "answered",
+      "source_based_check": "超过100件且主管不得复核本人申请；两个条件均完整。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-08",
+      "mode": "engineered",
+      "question": "果园系统需要主管复核的数量条件是什么，主管能否复核自己的申请？",
+      "final_answer": "数量条件：单次领用数量超过100件时，除仓库管理员审核外，还须由主管复核（即主管复核的触发条件是单次领用数量>100件）。主管不能复核自己提交的申请——文档明确规定“主管不得复核自己提交的申请”。",
+      "status": "answered",
+      "source_based_check": "超过100件且主管不得复核本人申请；两个条件均完整。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-08",
+      "mode": "optimized",
+      "question": "果园系统需要主管复核的数量条件是什么，主管能否复核自己的申请？",
+      "final_answer": "数量条件：单次领用数量超过100件时，除仓库管理员审核外，还须由主管复核（即 >100 件）。主管不能复核自己提交的申请——文档明确规定“主管不得复核自己提交的申请”。",
+      "status": "answered",
+      "source_based_check": "超过100件且主管不得复核本人申请；两个条件均完整。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-09",
+      "mode": "baseline",
+      "question": "果园系统使用的数据库品牌是什么？",
+      "final_answer": "文档未提及果园系统使用的数据库品牌。全文（范围与对象、领用与预警、权限与留痕、实施与容灾四个章节及两张表格）均未出现任何数据库品牌信息，仅涉及性能与备份目标（如并发用户数30、每日1次完整备份）等，未指明具体数据库产品。",
+      "status": "insufficient",
+      "source_based_check": "未指定数据库品牌，三版拒答符合完整来源。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-09",
+      "mode": "engineered",
+      "question": "果园系统使用的数据库品牌是什么？",
+      "final_answer": "文档未提及果园系统所使用的数据库品牌。全文（范围与对象、领用与预警、权限与留痕、实施与容灾四个章节及两张表格）均未出现任何数据库产品或品牌信息，仅涉及性能与备份目标（并发用户数、响应时间上限、备份频率）和容灾指标（故障恢复时间、数据丢失窗口），未指明具体数据库品牌。",
+      "status": "insufficient",
+      "source_based_check": "未指定数据库品牌，三版拒答符合完整来源。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-09",
+      "mode": "optimized",
+      "question": "果园系统使用的数据库品牌是什么？",
+      "final_answer": "文档未提及果园系统使用的数据库品牌。全文（范围与对象、领用与预警、权限与留痕、实施与容灾四个章节及两张表格）均未出现任何数据库产品或品牌信息，仅涉及性能、备份频率、容灾等目标指标。",
+      "status": "insufficient",
+      "source_based_check": "未指定数据库品牌，三版拒答符合完整来源。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-10",
+      "mode": "baseline",
+      "question": "果园系统的实际上线日期是哪一天？",
+      "final_answer": "文档未记载果园系统的实际上线日期。全文仅说明项目分为需求、开发和试运行三个阶段、总周期为6周，未给出任何具体上线日期。",
+      "status": "insufficient",
+      "source_based_check": "6周是计划周期，不是实际上线日期；三版正确拒答。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-10",
+      "mode": "engineered",
+      "question": "果园系统的实际上线日期是哪一天？",
+      "final_answer": "文档未记载果园系统的实际上线日期。文档仅说明项目分为需求、开发和试运行三个阶段、总周期为6周，未给出任何具体上线日期。",
+      "status": "insufficient",
+      "source_based_check": "6周是计划周期，不是实际上线日期；三版正确拒答。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    },
+    {
+      "id": "orchard-10",
+      "mode": "optimized",
+      "question": "果园系统的实际上线日期是哪一天？",
+      "final_answer": "文档未记载果园系统的实际上线日期。全文仅说明项目分为需求、开发和试运行三个阶段、总周期为6周，未给出任何具体上线日期或起止日期，因此无法回答。",
+      "status": "insufficient",
+      "source_based_check": "6周是计划周期，不是实际上线日期；三版正确拒答。",
+      "core_question_answer_supported": true,
+      "finding": null,
+      "disposition": "no_issue_detected"
+    }
+  ]
+}

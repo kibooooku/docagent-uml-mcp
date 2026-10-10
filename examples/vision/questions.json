@@ -1,0 +1,45 @@
+[
+  {
+    "id": "vision-01",
+    "doc_id": "vision_lab",
+    "question": "根据图中的 Completed tasks，East 区域的完成数量是多少？",
+    "expected_answer": "East完成数量为27",
+    "answerable": true,
+    "category": "image_reading",
+    "required_terms": [
+      "27"
+    ],
+    "expected_evidence_ids": [
+      "vision_lab:image:fig1"
+    ]
+  },
+  {
+    "id": "vision-02",
+    "doc_id": "vision_lab",
+    "question": "根据 Completed tasks 图，East 区域的完成数量减去 West 区域的完成数量，差值是多少？",
+    "expected_answer": "27减12等于15",
+    "answerable": true,
+    "category": "image_arithmetic",
+    "required_terms": [
+      "15"
+    ],
+    "expected_evidence_ids": [
+      "vision_lab:image:fig1"
+    ]
+  },
+  {
+    "id": "vision-03",
+    "doc_id": "vision_lab",
+    "question": "综合 Completed tasks 图与 Failed tasks 图，North 区域的完成数量减去失败数量，结果是多少？",
+    "expected_answer": "18减2等于16",
+    "answerable": true,
+    "category": "cross_image_arithmetic",
+    "required_terms": [
+      "16"
+    ],
+    "expected_evidence_ids": [
+      "vision_lab:image:fig1",
+      "vision_lab:image:fig2"
+    ]
+  }
+]

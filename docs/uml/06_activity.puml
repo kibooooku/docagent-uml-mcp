@@ -1,0 +1,22 @@
+@startuml
+skinparam monochrome true
+skinparam defaultFontName Microsoft YaHei
+start
+:Actor 依据文档与记忆生成初答;
+:Reviewer 补充取证与复核;
+:EvidenceGate 校验引用来源;
+while (需要修订且预算可用?) is (是)
+  :Actor 有限返工;
+  :Reviewer 复核;
+  :EvidenceGate 核验;
+endwhile (否)
+if (引用核验通过?) then (是)
+  :有条件写入记忆并输出结果;
+  note right: 拒答结果不写记忆
+else (否)
+  :输出证据不足;
+endif
+stop
+note right: 工具白名单、调用预算、超时重试
+与任务取消贯穿全过程
+@enduml
